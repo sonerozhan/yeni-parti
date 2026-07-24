@@ -10,7 +10,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth; /* Sayfa içi geçişleri yumuşatır */
+            scroll-behavior: smooth;
         }
 
         body, html {
@@ -59,7 +59,7 @@
             color: #ffd700;
         }
 
-        /* 1. Bölüm: Ana Ekran (Arka Planı Resimli Hero) */
+        /* 1. Bölüm: Ana Ekran */
         .hero {
             width: 100%;
             height: 100vh;
@@ -125,7 +125,7 @@
             color: #333333;
         }
 
-        /* Ortak Bölüm Tasarımları */
+        /* Ortak Bölüm */
         .section {
             padding: 100px 80px;
             min-height: 80vh;
@@ -143,14 +143,14 @@
             font-weight: bold;
         }
 
-        /* 2. Bölüm: Haberler */
+        /* 2. Bölüm: Haberler (Resimli Kartlar) */
         #haberler {
             background-color: #ffffff;
         }
 
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             width: 100%;
             max-width: 1200px;
@@ -160,13 +160,23 @@
             background: #fdfdfd;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
-            padding: 20px;
+            overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s;
         }
 
         .news-card:hover {
             transform: translateY(-5px);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
         }
 
         .news-card h3 {
@@ -231,7 +241,7 @@
             background-color: #a00d24;
         }
 
-        /* Alt Bilgi (Footer) */
+        /* Alt Bilgi */
         footer {
             background-color: #222;
             color: #fff;
@@ -246,7 +256,7 @@
                 padding: 15px 20px;
             }
             .navbar ul {
-                display: none; /* Mobilde menü gizlendi */
+                display: none;
             }
             .hero {
                 padding: 0 20px;
@@ -267,13 +277,13 @@
 </head>
 <body>
 
-    <!-- Üst Menü (Sayfa İçi Linkler) -->
+    <!-- Üst Menü (Yazısı Değiştirildi) -->
     <nav class="navbar">
-        <a href="#" class="logo">Özgür Özel</a>
+        <a href="#" class="logo">Değişim ve Vizyon</a>
         <ul>
             <li><a href="#hero">Ana Sayfa</a></li>
-            <li><a href="#haberler">Haberler</a></li>
-            <li><a href="#uye-ol">Üye Ol</a></li>
+            <li><a href="#haberler">Güncel Haberler</a></li>
+            <li><a href="#uye-ol">Partiye Katıl</a></li>
         </ul>
     </nav>
 
@@ -289,22 +299,38 @@
         </div>
     </header>
 
-    <!-- 2. Haberler Bölümü -->
+    <!-- 2. Haberler Bölümü (Resimli) -->
     <section id="haberler" class="section">
         <h2 class="section-title">Son Gelişmeler ve Haberler</h2>
         <div class="news-grid">
+            
+            <!-- 1. Haber -->
             <div class="news-card">
-                <h3>Halkla Buluşma Mitingi Gerçekleşti</h3>
-                <p>Anadolu'nun dört bir yanından gelen vatandaşlarımızla kucaklaştık. Ortak geleceğimiz için atacağımız adımları konuştuk.</p>
+                <img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?q=80&w=600&auto=format&fit=crop" alt="Miting">
+                <div class="news-content">
+                    <h3>Halkla Buluşma Mitingi Gerçekleşti</h3>
+                    <p>Anadolu'nun dört bir yanından gelen vatandaşlarımızla kucaklaştık. Ortak geleceğimiz için atacağımız adımları konuştuk.</p>
+                </div>
             </div>
+
+            <!-- 2. Haber -->
             <div class="news-card">
-                <h3>Yeni Vizyon Raporu Açıklandı</h3>
-                <p>Ekonomiden eğitime, adaletten sağlığa kadar ülkenin tüm sorunlarına kalıcı çözümler getirecek raporumuz kamuoyuyla paylaşıldı.</p>
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" alt="Vizyon Raporu">
+                <div class="news-content">
+                    <h3>Yeni Vizyon Raporu Açıklandı</h3>
+                    <p>Ekonomiden eğitime, adaletten sağlığa kadar ülkenin tüm sorunlarına kalıcı çözümler getirecek raporumuz kamuoyuyla paylaşıldı.</p>
+                </div>
             </div>
+
+            <!-- 3. Haber -->
             <div class="news-card">
-                <h3>Gençlik Kolları Toplantısı</h3>
-                <p>Geleceğimizin teminatı olan gençlerimizle bir araya geldik. Yenilikçi projelerini dinledik ve destek mesajımızı yineledik.</p>
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Gençlik Buluşması">
+                <div class="news-content">
+                    <h3>Gençlik Kolları Toplantısı</h3>
+                    <p>Geleceğimizin teminatı olan gençlerimizle bir araya geldik. Yenilikçi projelerini dinledik ve destek mesajımızı yineledik.</p>
+                </div>
             </div>
+
         </div>
     </section>
 
