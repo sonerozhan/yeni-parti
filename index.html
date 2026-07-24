@@ -17,7 +17,6 @@
             height: 100%;
         }
 
-        /* Arka plan görseli ve kırmızı filtre */
         .hero {
             width: 100%;
             height: 100vh;
@@ -26,9 +25,10 @@
             justify-content: flex-start;
             padding: 0 80px;
             
-            /* Burada kırmızı yarı şeffaf filtre var, arkasından da gerçek bir miting/kalabalık fotoğrafı yükleniyor */
-            background: linear-gradient(rgba(200, 16, 46, 0.75), rgba(200, 16, 46, 0.85)), 
-                        url('https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+            /* Gönderdiğin fotoğrafı arka plana tam oturtuyoruz. 
+               Yazıların net okunması için arkaya çok hafif yumuşak bir karartma verdik. */
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), 
+                        url('https://i.hizliresim.com/6j0v1c4.jpg') no-repeat center center/cover;
             color: #ffffff;
         }
 
@@ -40,17 +40,16 @@
             font-size: 3.5rem;
             line-height: 1.2;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             line-height: 1.6;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
 
-        /* Butonlar */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -66,12 +65,12 @@
         }
 
         .btn-uye {
-            background-color: #ffffff;
-            color: #c8102e;
+            background-color: #c8102e; /* Parti Kırmızısı */
+            color: #ffffff;
         }
 
         .btn-uye:hover {
-            background-color: #f0f0f0;
+            background-color: #a00d24;
         }
 
         .btn-bilgi {
@@ -82,10 +81,9 @@
 
         .btn-bilgi:hover {
             background-color: #ffffff;
-            color: #c8102e;
+            color: #333333;
         }
 
-        /* Mobil Uyumluluk */
         @media (max-width: 768px) {
             .hero {
                 padding: 0 20px;
@@ -103,7 +101,6 @@
 </head>
 <body>
 
-    <!-- Arka Planı Resimli, Kırmızı Temalı Alan -->
     <header class="hero">
         <div class="hero-content">
             <h1>Türkiye'nin Geleceği İçin Yeni Bir Vizyon</h1>
