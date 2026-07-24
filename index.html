@@ -1,328 +1,236 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Topluluk Haber Portalı</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
-body{
-background:#f5f5f5;
-color:#222;
-}
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
-color:#fff;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-margin-left:25px;
-font-weight:500;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ffd700;
-}
-
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url("hero.jpg") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-padding:20px;
-}
-
-.hero h1{
-font-size:60px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-max-width:700px;
-margin:auto;
-margin-bottom:35px;
-}
-
-.buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:15px 35px;
-border:none;
-border-radius:50px;
-font-size:17px;
-cursor:pointer;
-transition:.35s;
-}
-
-.red{
-background:#d62828;
-color:white;
-}
-
-.white{
-background:white;
-color:#111;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-section{
-padding:90px 8%;
-}
-
-.title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.card{
-background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.card-content{
-padding:25px;
-}
-
-.card-content h3{
-margin-bottom:10px;
-}
-
-.card-content p{
-color:#666;
-line-height:1.6;
-}
-
-.banner{
-height:420px;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url("community.jpg") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-color:white;
-}
-
-.banner h2{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.banner button{
-padding:15px 40px;
-border:none;
-border-radius:40px;
-background:#d62828;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-
-footer{
-background:#111;
-color:white;
-padding:40px;
-text-align:center;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-nav{
-display:none;
-}
-
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özgür Özel Partisi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Arka plan fotoğrafı ve başlık */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('ozgur-ozel.jpg') center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn:hover {
+            background: #b71c1c;
+        }
+        
+        /* Navigasyon */
+        nav {
+            background: #222;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #d32f2f;
+        }
+        
+        /* Haberler bölümü */
+        .haberler {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .haberler h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+            color: #d32f2f;
+        }
+        
+        .haber-card {
+            background: #f5f5f5;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #d32f2f;
+            border-radius: 5px;
+        }
+        
+        .haber-card h3 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        .haber-card p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .haber-tarih {
+            font-size: 0.9em;
+            color: #999;
+        }
+        
+        /* Destekçiler galeri */
+        .destekcieler {
+            padding: 50px 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        
+        .destekcieler h2 {
+            margin-bottom: 40px;
+            font-size: 2em;
+            color: #d32f2f;
+        }
+        
+        .galeri {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .galeri-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .galeri-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .galeri-item p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Üye ol formu */
+        .uye-ol {
+            padding: 50px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .uye-ol h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d32f2f;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-
-<header>
-
-<div class="logo">Topluluk</div>
-
-<nav>
-<a href="#">Ana Sayfa</a>
-<a href="#">Haberler</a>
-<a href="#">Etkinlikler</a>
-<a href="#">İletişim</a>
-</nav>
-
-</header>
-
-<section class="hero">
-
-<div>
-
-<h1>Birlikte Daha Güçlü Bir Topluluk</h1>
-
-<p>
-Güncel haberleri takip edin, etkinlikleri inceleyin ve topluluğumuza katılın.
-</p>
-
-<div class="buttons">
-
-<button class="btn red">Haberler</button>
-
-<button class="btn white">Topluluğa Katıl</button>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Son Haberler</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="https://picsum.photos/600/400?1">
-
-<div class="card-content">
-
-<h3>Yeni Duyuru</h3>
-
-<p>
-Topluluğumuzun son etkinlikleri ve gelişmeleri hakkında güncel bilgiler.
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://picsum.photos/600/400?2">
-
-<div class="card-content">
-
-<h3>Etkinlik Takvimi</h3>
-
-<p>
-Yaklaşan programlarımızı inceleyebilir ve katılım sağlayabilirsiniz.
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://picsum.photos/600/400?3">
-
-<div class="card-content">
-
-<h3>Basın Açıklaması</h3>
-
-<p>
-Gündeme dair paylaşımlar ve resmi duyurular burada yer alır.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="banner">
-
-<h2>Topluluğumuza Katıl</h2>
-
-<p style="margin-bottom:30px;font-size:18px;">
-Birlikte daha fazla kişiye ulaşalım.
-</p>
-
-<button>Katıl</button>
-
-</section>
-
-<footer>
-
-<h3>Topluluk Portalı</h3>
-
-<p style="margin-top:10px;">
-© 2026 Tüm Hakları Saklıdır.
-</p>
-
-</footer>
-
-</body>
-</html>
+    <!-- Başlık -->
+    <header>
+        <h1>Özgür Özel Partisi</h1>
+        <p>Türkiye'nin Geleceği İçin Birlikte</p>
+        <button class="btn" onclick="document.getElementById('uye-ol-section').scrollIntoView()">Üye Ol</button>
+    </header>
+    
+    <!-- Navigasyon -->
+    <nav>
+        <a href="#haberler">Haberler</a>
+        <a href="#destekcieler">Destekçiler</a>
+        <a href="#uye-ol-section">Üye Ol</a>
+        <a href="#iletisim">İletişim</a>
+    </nav>
+    
+    <!-- Haberler -->
+    <section id="haberler" class="haberler">
+        <h2>Son Haberler</h2>
+        
+        <div class="haber-card">
+            <h3>Yeni Program Açıklandı</h3>
+            <p>Partimizin yeni sosyal program hakkında detaylar açıklandı. Eğitim, sağlık ve istihdam alanlarında önemli adımlar atılacak.</p>
+            <span class="haber-tarih">24 Temmuz 2026</span>
+        </div>
+        
+        <div class="haber-card">
+            <h3>Üyelik Kampanyası Başladı</h3>
+            <p>Partiye katılmak isteyenlerin başvuruları kabul edilmeye başlandı. Tüm Türkiye'den üye alınmaktadır.</p>
+            <span class="haber-tarih">20 Temmuz 2026</span>
+        </div>
+        
+        <div class="haber-card">
+            <h3>Halka Açık Etkinlik</h3>
+            <p>Partimizin ilk büyük
