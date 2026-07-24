@@ -82,7 +82,7 @@
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -92,7 +92,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: 0.3s;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .navbar ul li a:hover {
@@ -107,7 +107,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         .theme-toggle-btn:hover {
@@ -205,7 +205,7 @@
             text-align: center;
         }
 
-        /* 2. Bölüm: Manifesto */
+        /* Manifesto */
         #manifesto {
             background-color: var(--bg-color);
         }
@@ -228,7 +228,7 @@
             margin-bottom: 20px;
         }
 
-        /* 3. Bölüm: İlkelerimiz */
+        /* İlkelerimiz */
         #ilkeler {
             background-color: var(--card-bg);
         }
@@ -268,7 +268,7 @@
             line-height: 1.5;
         }
 
-        /* Canlı Yayın & Medya */
+        /* Canlı Yayın & Medya Arşivi */
         #canli-yayin {
             background-color: var(--bg-color);
         }
@@ -281,6 +281,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
         }
 
         .video-responsive {
@@ -314,7 +315,35 @@
             font-size: 0.95rem;
         }
 
-        /* 4. Bölüm: Basın Açıklamaları */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .archive-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .archive-card h4 {
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .archive-card p {
+            color: var(--subtext-color);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        /* Basın Açıklamaları */
         #basin {
             background-color: var(--card-bg);
         }
@@ -359,7 +388,7 @@
             text-decoration: underline;
         }
 
-        /* 5. Bölüm: Haberler */
+        /* Haberler */
         #haberler {
             background-color: var(--bg-color);
         }
@@ -455,7 +484,7 @@
             background-color: #a00d24;
         }
 
-        /* Yeni Bölüm: Gönüllü Deneyimleri / Hikayeler */
+        /* Gönüllü Hikayeleri */
         #hikayeler {
             background-color: var(--bg-color);
         }
@@ -491,9 +520,41 @@
             font-size: 0.9rem;
         }
 
-        /* 6. Şehir Teşkilatları */
+        /* Şehir Teşkilatları ve Arama Modülü */
         #teskilat {
             background-color: var(--card-bg);
+        }
+
+        .search-box-container {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box-container input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--card-border);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .search-box-container button {
+            background-color: #c8102e;
+            color: #fff;
+            border: none;
+            padding: 0 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .search-box-container button:hover {
+            background-color: #a00d24;
         }
 
         .city-grid {
@@ -523,7 +584,7 @@
             color: var(--subtext-color);
         }
 
-        /* 7. SSS - Akordeon Yapısı */
+        /* SSS - Akordeon Yapısı */
         #sss {
             background-color: var(--bg-color);
         }
@@ -573,7 +634,7 @@
             padding: 0 20px 20px 20px;
         }
 
-        /* 8. Formlar */
+        /* Formlar ve Öneri Kutusu */
         #iletisim-ve-uye {
             background-color: var(--card-bg);
         }
@@ -598,7 +659,7 @@
         .form-container h3 {
             color: #c8102e;
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-align: center;
         }
 
@@ -645,7 +706,61 @@
             background-color: #a00d24;
         }
 
-        /* Alt Bilgi */
+        /* Bülten Abonelik Şeridi */
+        .newsletter-strip {
+            background-color: #c8102e;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .newsletter-content h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-content p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #fce8e6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            width: 300px;
+            max-width: 100%;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #333333;
+        }
+
+        /* Gelişmiş Alt Bilgi (Footer) */
         footer {
             background-color: #1a1a1a;
             color: #fff;
@@ -754,7 +869,7 @@
 
     <!-- En Üst Duyuru Bandı -->
     <div class="ticker-band">
-        🚨 DUYURU: Güncel gelişmeler ve resmi duyurular için sosyal medya hesaplarımızı takip edebilirsiniz.
+        🚨 DUYURU: Güncel gelişmeler, miting takvimi ve resmi duyurular için bildirimlerimizi takip edin!
     </div>
 
     <!-- Üst Menü -->
@@ -767,6 +882,7 @@
             <li><a href="#canli-yayin">Medya</a></li>
             <li><a href="#basin">Basın</a></li>
             <li><a href="#haberler">Haberler</a></li>
+            <li><a href="#basin-kiti">Basın Kiti</a></li>
             <li><a href="#hikayeler">Hikayeler</a></li>
             <li><a href="#teskilat">Teşkilat</a></li>
             <li><a href="#sss">SSS</a></li>
@@ -822,17 +938,37 @@
         </div>
     </section>
 
-    <!-- Canlı Yayın & Medya -->
+    <!-- Canlı Yayın & Video Arşivi -->
     <section id="canli-yayin" class="section">
-        <h2 class="section-title">Canlı Yayın ve Konuşmalar</h2>
-        <p class="section-subtitle">Meclis grup toplantıları ve güncel açıklamalar</p>
+        <h2 class="section-title">Canlı Yayın ve Medya Arşivi</h2>
+        <p class="section-subtitle">Meclis grup toplantıları, mitingler ve geçmiş yayınlar</p>
+        
         <div class="video-container">
             <div class="video-responsive">
                 <iframe src="https://www.youtube.com/embed/live_stream?channel=UC..." title="Canlı Yayın" allowfullscreen></iframe>
             </div>
             <div class="video-info">
-                <h3>En Son Grup Toplantısı ve Değerlendirmeler</h3>
+                <h3>En Son Canlı Yayın / Grup Toplantısı</h3>
                 <p>Güncel konuşmaları ve açıklamaları buradan canlı olarak takip edebilirsiniz.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 20px; color: var(--text-color); font-size: 1.3rem;">Öne Çıkan Arşiv Videoları</h3>
+        <div class="archive-grid">
+            <div class="archive-card">
+                <h4>Bütçe Görüşmeleri Konuşması</h4>
+                <p>Meclis Genel Kurulu - 15 Dakika</p>
+                <a href="#" class="basin-link">İzle &rarr;</a>
+            </div>
+            <div class="archive-card">
+                <h4>Halk Buluşması (Ankara Mitingi)</h4>
+                <p>Meydan Canlı Yayını - 45 Dakika</p>
+                <a href="#" class="basin-link">İzle &rarr;</a>
+            </div>
+            <div class="archive-card">
+                <h4>Özel Röportaj ve Değerlendirmeler</h4>
+                <p>TV Programı - 30 Dakika</p>
+                <a href="#" class="basin-link">İzle &rarr;</a>
             </div>
         </div>
     </section>
@@ -848,7 +984,7 @@
                 <a href="#" class="basin-link">Konuşmanın Tamamını Oku &rarr;</a>
             </div>
             <div class="basin-card">
-                <h3>Ekonomi ve Hak Temelli Yaklaşım</h3>
+                <h3>Ekonomi and Hak Temelli Yaklaşım</h3>
                 <p>Alım gücünü artıracak, üreticiyi koruyacak politikaların temel vizyonu kamuoyuyla paylaşıldı.</p>
                 <a href="#" class="basin-link">Detayları İncele &rarr;</a>
             </div>
@@ -882,17 +1018,17 @@
             <div class="news-card">
                 <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Toplantı Görseli">
                 <div class="news-content">
-                    <h3>Ortak Akıl ve İstişare Toplantıları</h3>
+                    <h3>Ortak Akıl and İstişare Toplantıları</h3>
                     <p>Toplumun tüm kesimleriyle bir araya gelerek ortak çözümler üretmeye devam ediyoruz.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Basın Kiti -->
+    <!-- Basın Kiti (Media Kit) -->
     <section id="basin-kiti" class="section">
         <h2 class="section-title">Basın Kiti (Media Kit)</h2>
-        <p class="section-subtitle">Basın mensupları ve ajanslar için resmi materyaller</p>
+        <p class="section-subtitle">Basın mensupları, ajanslar ve dijital mecralar için resmi materyaller</p>
         <div class="kit-grid">
             <div class="kit-card">
                 <h4>Yüksek Çözünürlüklü Fotoğraflar</h4>
@@ -901,18 +1037,18 @@
             </div>
             <div class="kit-card">
                 <h4>Logolar ve Tasarım Öğeleri</h4>
-                <p>Resmi kampanya logoları ve kurumsal renk kodları.</p>
+                <p>Resmi kampanya logoları, vektörel çizimler ve renk kodları.</p>
                 <a href="#" class="kit-btn">Logoları İndir (.ZIP)</a>
             </div>
             <div class="kit-card">
                 <h4>Resmi Biyografi</h4>
-                <p>Güncellenmiş kısa ve detaylı özgeçmiş dokümanları.</p>
+                <p>Güncellenmiş kısa, orta ve detaylı özgeçmiş dokümanları.</p>
                 <a href="#" class="kit-btn">Biyografiyi İndir (.PDF)</a>
             </div>
         </div>
     </section>
 
-    <!-- Yeni Ekleme: Gönüllü Hikayeleri -->
+    <!-- Gönüllü Hikayeleri -->
     <section id="hikayeler" class="section">
         <h2 class="section-title">Gönüllü Deneyimleri</h2>
         <p class="section-subtitle">Saha çalışmalarında omuz omuza veren gönüllülerimizin hissettikleri</p>
@@ -926,37 +1062,43 @@
                 <div class="story-author">— Zeynep M., İzmir Gönüllüsü</div>
             </div>
             <div class="story-card">
-                <p>"Gençlerin siyasette artık söz sahibi olduğunu görmek ve bu değişimin bir parçası olmak gurur verici."</p>
+                <p>"Gençlerin siyasette artık söz sahibi olduğunu görmek and bu değişimin bir parçası olmak gurur verici."</p>
                 <div class="story-author">— Canberk T., İstanbul Gönüllüsü</div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Şehir Teşkilatları -->
+    <!-- Şehir Teşkilatları ve Arama Modülü -->
     <section id="teskilat" class="section">
-        <h2 class="section-title">Şehir Teşkilatlarımız</h2>
-        <p class="section-subtitle">Türkiye'nin dört bir yanında gönüllülerimizle büyümeye devam ediyoruz</p>
-        <div class="city-grid">
-            <div class="city-box">
+        <h2 class="section-title">Şehir Teşkilatlarımız and İrtibat Ofisleri</h2>
+        <p class="section-subtitle">Bulunduğunuz ildeki il/ilçe teşkilatını hemen bulun</p>
+        
+        <div class="search-box-container">
+            <input type="text" id="citySearchInput" placeholder="Şehir adı yazın (Örn: Ankara, İstanbul, İzmir...)">
+            <button onclick="searchCity()">Ara</button>
+        </div>
+
+        <div class="city-grid" id="cityGrid">
+            <div class="city-box" data-city="istanbul">
                 <h4>İstanbul Merkez</h4>
-                <p>İrtibat ve Gönüllü Ofisi</p>
+                <p>İrtibat and Gönüllü Ofisi</p>
             </div>
-            <div class="city-box">
+            <div class="city-box" data-city="ankara">
                 <h4>Ankara Merkez</h4>
                 <p>Genel Koordinasyon Merkezi</p>
             </div>
-            <div class="city-box">
+            <div class="city-box" data-city="izmir">
                 <h4>İzmir Merkez</h4>
                 <p>Ege Bölge Ofisi</p>
             </div>
-            <div class="city-box">
+            <div class="city-box" data-city="gaziantep">
                 <h4>Gaziantep Merkez</h4>
                 <p>Güneydoğu Anadolu Ofisi</p>
             </div>
         </div>
     </section>
 
-    <!-- 7. SSS - Akordeon Yapısı -->
+    <!-- SSS - Akordeon Yapısı -->
     <section id="sss" class="section">
         <h2 class="section-title">Sıkça Sorulan Sorular</h2>
         <p class="section-subtitle">Merak edilen konular hakkında hızlı bilgilendirmeler</p>
@@ -966,25 +1108,25 @@
                 <div class="faq-answer">Sayfanın alt kısmında yer alan "Aramıza Katılın" formunu doldurarak gönüllülük veya üyelik sürecinizi kolayca başlatabilirsiniz.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Duyurulardan ve etkinliklerden nasıl haberdar olabilirim? <span>▼</span></div>
+                <div class="faq-question">Duyurulardan and etkinliklerden nasıl haberdar olabilirim? <span>▼</span></div>
                 <div class="faq-answer">Sosyal medya hesaplarımızı takip edebilir veya bültenimize katılarak güncellemeleri anında alabilirsiniz.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Bulunduğum şehirde teşkilat ofisiniz var mı? <span>▼</span></div>
-                <div class="faq-answer">Şehir Teşkilatları bölümünden ana merkezlerimizi görebilir, iletişim formu üzerinden detaylı bilgi talep edebilirsiniz.</div>
+                <div class="faq-answer">Yukarıdaki Teşkilat arama modülünü kullanarak bulunduğunuz ildeki ofis bilgilerine kolayca ulaşabilirsiniz.</div>
             </div>
         </div>
     </section>
 
-    <!-- 8. Formlar -->
+    <!-- Formlar ve Halkın Sesi Öneri Kutusu -->
     <section id="iletisim-ve-uye" class="section">
         <div class="forms-wrapper">
             <div class="form-container">
-                <h3>Aramıza Katılın</h3>
+                <h3>Aramıza Katılın (Gönüllü/Üye)</h3>
                 <form>
                     <div class="form-group">
                         <label for="adsoyad">Ad Soyad</label>
-                        <input type="text" id="adsoyad" placeholder="Adınızı ve soyadınızı girin" required>
+                        <input type="text" id="adsoyad" placeholder="Adınızı and soyadınızı girin" required>
                     </div>
                     <div class="form-group">
                         <label for="telefon">Telefon Numarası</label>
@@ -995,11 +1137,12 @@
                         <input type="text" id="sehir" placeholder="Yaşadığınız şehir" required>
                     </div>
                     <div class="form-group">
-                        <label for="ilgi">Katılım Amacınız</label>
+                        <label for="ilgi">Destek Alanı / Katılım Amacınız</label>
                         <select id="ilgi">
-                            <option>Gönüllü Olarak Desteklemek İstiyorum</option>
+                            <option>Saha Çalışmaları and Gönüllülük</option>
+                            <option>Sosyal Medya and Dijital Destek</option>
                             <option>Parti Üyesi Olmak İstiyorum</option>
-                            <option>Gençlik Kollarına Katılmak İstiyorum</option>
+                            <option>Gençlik Kolları</option>
                         </select>
                     </div>
                     <button type="submit" class="form-submit">Hemen Kaydol</button>
@@ -1007,25 +1150,37 @@
             </div>
 
             <div class="form-container">
-                <h3>Bize Ulaşın / Soru Sorun</h3>
+                <h3>Halkın Sesi / Öneri Kutusu</h3>
                 <form>
                     <div class="form-group">
-                        <label for="iletisim-ad">Ad Soyad</label>
-                        <input type="text" id="iletisim-ad" placeholder="Adınız soyadınız" required>
+                        <label for="oneri-ad">Ad Soyad (İsteğe Bağlı)</label>
+                        <input type="text" id="oneri-ad" placeholder="Adınız soyadınız">
                     </div>
                     <div class="form-group">
-                        <label for="iletisim-eposta">E-Posta Adresi</label>
-                        <input type="email" id="iletisim-eposta" placeholder="ornek@mail.com" required>
+                        <label for="oneri-sehir">Şehir / Bölge</label>
+                        <input type="text" id="oneri-sehir" placeholder="Bulunduğunuz il/ilçe" required>
                     </div>
                     <div class="form-group">
-                        <label for="mesaj">Mesajınız / Öneriniz</label>
-                        <textarea id="mesaj" placeholder="Görüşlerinizi bizimle paylaşın..." required></textarea>
+                        <label for="mesaj">Sorun, Görüş veya Çözüm Öneriniz</label>
+                        <textarea id="mesaj" placeholder="Şehrinizdeki sorunları veya projelerimizi geliştirmek için önerilerinizi yazın..." required></textarea>
                     </div>
-                    <button type="submit" class="form-submit">Mesajı Gönder</button>
+                    <button type="submit" class="form-submit">Öneriyi Gönder</button>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- Bülten Abonelik Şeridi -->
+    <div class="newsletter-strip">
+        <div class="newsletter-content">
+            <h3>Gelişmelerden İlk Sizin Haberdar Olun</h3>
+            <p>E-bültenimize kayıt olarak son dakika miting duyurularını, kampanya vizyonunu ve yeni projeleri e-posta kutunuza alın.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Bültene başarıyla kaydoldunuz!');">
+                <input type="email" placeholder="E-posta adresinizi yazın..." required>
+                <button type="submit">Abone Ol</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Gelişmiş Alt Bilgi (Footer) -->
     <footer>
@@ -1087,11 +1242,25 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                // Diğer açık olanları kapatmak istersen bu bloğu açabilirsin
-                // faqItems.forEach(i => { if(i !== item) i.classList.remove('active'); });
                 item.classList.toggle('active');
             });
         });
+
+        // Şehir Teşkilatları Arama Fonksiyonu
+        function searchCity() {
+            const input = document.getElementById('citySearchInput').value.toLowerCase().trim();
+            const boxes = document.querySelectorAll('.city-box');
+            
+            boxes.forEach(box => {
+                const cityName = box.getAttribute('data-city');
+                const titleText = box.querySelector('h4').innerText.toLowerCase();
+                if (cityName.includes(input) || titleText.includes(input) || input === '') {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        }
     </script>
 
 </body>
