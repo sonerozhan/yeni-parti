@@ -45,7 +45,8 @@
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 18px;
+            flex-wrap: wrap;
         }
 
         .navbar ul li a {
@@ -53,7 +54,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: 0.3s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .navbar ul li a:hover {
@@ -151,9 +152,30 @@
             text-align: center;
         }
 
-        /* 2. Bölüm: İlkelerimiz (Değerler) */
-        #ilkeler {
+        /* 2. Bölüm: Manifesto / Biz Kimiz */
+        #manifesto {
             background-color: #ffffff;
+        }
+
+        .manifesto-box {
+            max-width: 900px;
+            background: #fdfdfd;
+            border-left: 5px solid #c8102e;
+            padding: 40px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .manifesto-box p {
+            margin-bottom: 20px;
+        }
+
+        /* 3. Bölüm: İlkelerimiz */
+        #ilkeler {
+            background-color: #f4f4f4;
         }
 
         .principles-grid {
@@ -190,7 +212,52 @@
             line-height: 1.5;
         }
 
-        /* 3. Bölüm: Son Haberler */
+        /* 4. Bölüm: Basın Açıklamaları ve Konuşmalar */
+        #basin {
+            background-color: #ffffff;
+        }
+
+        .basin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .basin-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .basin-card h3 {
+            font-size: 1.2rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .basin-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .basin-link {
+            color: #c8102e;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .basin-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 5. Bölüm: Haberler */
         #haberler {
             background-color: #f4f4f4;
         }
@@ -237,13 +304,45 @@
             line-height: 1.5;
         }
 
-        /* 4. Bölüm: Üye Ol Formu */
-        #uye-ol {
+        /* 6. Bölüm: Teşkilatlar / İletişim Noktaları */
+        #teskilat {
             background-color: #ffffff;
         }
 
-        .form-container {
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .city-box {
             background: #fdfdfd;
+            border: 1px solid #e8e8e8;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .city-box h4 {
+            color: #c8102e;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .city-box p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* 7. Bölüm: Üye Ol Formu */
+        #uye-ol {
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            background: #ffffff;
             border: 1px solid #e0e0e0;
             padding: 40px;
             border-radius: 8px;
@@ -318,6 +417,7 @@
             justify-content: center;
             gap: 20px;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .social-links a {
@@ -373,9 +473,12 @@
         <a href="#" class="logo">Özgür Özel | Vizyon</a>
         <ul>
             <li><a href="#hero">Ana Sayfa</a></li>
-            <li><a href="#ilkeler">İlkelerimiz</a></li>
-            <li><a href="#haberler">Son Gelişmeler</a></li>
-            <li><a href="#uye-ol">Partiye Katıl</a></li>
+            <li><a href="#manifesto">Manifesto</a></li>
+            <li><a href="#ilkeler">İlkeler</a></li>
+            <li><a href="#basin">Basın</a></li>
+            <li><a href="#haberler">Haberler</a></li>
+            <li><a href="#teskilat">Teşkilatlar</a></li>
+            <li><a href="#uye-ol">Katıl</a></li>
         </ul>
     </nav>
 
@@ -386,12 +489,23 @@
             <p>"Asla pes etmek yok, omuz omuza kazanacağız." Halkın sesini dinleyen, adil ve şeffaf bir gelecek için birlikte yürüyoruz.</p>
             <div class="btn-group">
                 <a href="#uye-ol" class="btn btn-uye-main">Hemen Üye Ol</a>
-                <a href="#ilkeler" class="btn btn-bilgi">İlkelerimizi Keşfet</a>
+                <a href="#manifesto" class="btn btn-bilgi">Manifestomuzu Oku</a>
             </div>
         </div>
     </header>
 
-    <!-- 2. İlkelerimiz / Değerlerimiz Bölümü -->
+    <!-- 2. Manifesto / Biz Kimiz Bölümü -->
+    <section id="manifesto" class="section">
+        <h2 class="section-title">Biz Kimiz? / Manifesto</h2>
+        <p class="section-subtitle">Ülkenin kaderini değiştirecek inancın ve kararlılığın hikayesi</p>
+        <div class="manifesto-box">
+            <p>Bizler; bu cennet vatanın sokaklarında umudu yeniden yeşertmek, adaleti ve hakkaniyeti egemen kılmak için yola çıkan milyonlarız.</p>
+            <p>Geçmişin tecrübesiyle, geleceğin dinamizmini birleştiriyor; siyaseti kapalı kapılar ardında değil, doğrudan meydanlarda, halkın tam merkezinde yapıyoruz.</p>
+            <p>Hiç kimse umutsuzluğa kapılmasın; çünkü bu halk omuz omuza verip hak ettiği refaha, huzura ve özgürlüğe kesinlikle ulaşacaktır.</p>
+        </div>
+    </section>
+
+    <!-- 3. İlkelerimiz Bölümü -->
     <section id="ilkeler" class="section">
         <h2 class="section-title">Temel İlkelerimiz</h2>
         <p class="section-subtitle">Ülkemizi refaha ve adaletle taşımak için benimsediğimiz temel değerler</p>
@@ -415,7 +529,30 @@
         </div>
     </section>
 
-    <!-- 3. Güncel Haberler Bölümü (Özgür Özel'in Son Gelişmeleri) -->
+    <!-- 4. Basın Açıklamaları ve Konuşmalar Bölümü -->
+    <section id="basin" class="section">
+        <h2 class="section-title">Basın Açıklamaları ve Konuşmalar</h2>
+        <p class="section-subtitle">Özgür Özel'in kamuoyuyla paylaştığı son açıklamalar ve değerlendirmeler</p>
+        <div class="basin-grid">
+            <div class="basin-card">
+                <h3>"Milletimiz En Doğru Kararı Verecektir"</h3>
+                <p>Saha çalışmalarımız sırasında basına yaptığı açıklamada, halkın gösterdiği yoğun ilgiden duyduğu memnuniyeti dile getirdi.</p>
+                <a href="#" class="basin-link">Konuşmanın Tamamını Oku &rarr;</a>
+            </div>
+            <div class="basin-card">
+                <h3>Ekonomi ve Hak Temelli Çözüm Raporu</h3>
+                <p>Milletin alım gücünü artıracak, üreticiyi koruyacak somut ekonomik politikaların detaylarını paylaştı.</p>
+                <a href="#" class="basin-link">Raporu İncele &rarr;</a>
+            </div>
+            <div class="basin-card">
+                <h3>Gençlerle Buluşma Özel Açıklaması</h3>
+                <p>"Gelecek bizim ellerimizde şekillenecek" diyerek gençlerin ülke yönetiminde daha aktif söz sahibi olacağını vurguladı.</p>
+                <a href="#" class="basin-link">Detayları Gör &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Güncel Haberler Bölümü -->
     <section id="haberler" class="section">
         <h2 class="section-title">Son Gelişmeler ve Haberler</h2>
         <p class="section-subtitle">Özgür Özel öncülüğünde yeni siyasi hareket ve saha çalışmalarından güncel başlıklar</p>
@@ -444,7 +581,31 @@
         </div>
     </section>
 
-    <!-- 4. Üye Ol Form Bölümü -->
+    <!-- 6. Şehir Teşkilatları / İletişim Noktaları -->
+    <section id="teskilat" class="section">
+        <h2 class="section-title">Şehir Teşkilatlarımız</h2>
+        <p class="section-subtitle">Türkiye'nin dört bir yanında gönüllülerimizle büyümeye devam ediyoruz</p>
+        <div class="city-grid">
+            <div class="city-box">
+                <h4>İstanbul Merkez</h4>
+                <p>İrtibat ve Gönüllü Ofisi</p>
+            </div>
+            <div class="city-box">
+                <h4>Ankara Merkez</h4>
+                <p>Genel Koordinasyon Merkezi</p>
+            </div>
+            <div class="city-box">
+                <h4>İzmir Merkez</h4>
+                <p>Ege Bölge Ofisi</p>
+            </div>
+            <div class="city-box">
+                <h4>Gaziantep Merkez</h4>
+                <p>Güneydoğu Anadolu Ofisi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Üye Ol Form Bölümü -->
     <section id="uye-ol" class="section">
         <h2 class="section-title">Aramıza Katılın</h2>
         <p class="section-subtitle">Değişimin bir parçası olmak ve bu yürüyüşte yer almak için formu doldurun</p>
