@@ -60,7 +60,7 @@
         /* Sabit Üst Menü */
         .navbar {
             position: fixed;
-            top: 37px; /* Ticker bandı yüksekliği kadar aşağıda */
+            top: 37px;
             left: 0;
             width: 100%;
             background-color: var(--nav-bg);
@@ -179,30 +179,6 @@
         .btn-bilgi:hover {
             background-color: #ffffff;
             color: #333333;
-        }
-
-        /* Canlı Sayaç / İstatistik Şeridi (YENİ) */
-        .stats-bar {
-            background-color: #c8102e;
-            color: #ffffff;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 40px 20px;
-            text-align: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-            color: #ffd700;
-        }
-
-        .stat-item p {
-            font-size: 1rem;
-            font-weight: 500;
         }
 
         /* Ortak Bölüm Yapısı */
@@ -386,56 +362,9 @@
             line-height: 1.5;
         }
 
-        /* 6. Bölüm: Miting ve Etkinlik Takvimi */
-        #etkinlikler {
-            background-color: var(--bg-color);
-        }
-
-        .event-list {
-            width: 100%;
-            max-width: 900px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .event-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 20px 25px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .event-date {
-            background: #c8102e;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 4px;
-            text-align: center;
-            font-weight: bold;
-            min-width: 100px;
-        }
-
-        .event-details h4 {
-            font-size: 1.15rem;
-            color: var(--text-color);
-            margin-bottom: 5px;
-        }
-
-        .event-details p {
-            color: var(--subtext-color);
-            font-size: 0.95rem;
-        }
-
-        /* 7. Bölüm: Şehir Teşkilatları */
+        /* 6. Bölüm: Şehir Teşkilatları */
         #teskilat {
-            background-color: var(--card-bg);
+            background-color: var(--bg-color);
         }
 
         .city-grid {
@@ -447,7 +376,7 @@
         }
 
         .city-box {
-            background: var(--bg-color);
+            background: var(--card-bg);
             border: 1px solid var(--card-border);
             padding: 20px;
             border-radius: 6px;
@@ -465,9 +394,9 @@
             color: var(--subtext-color);
         }
 
-        /* 8. Bölüm: SSS - Sıkça Sorulan Sorular */
+        /* 7. Bölüm: SSS - Sıkça Sorulan Sorular */
         #sss {
-            background-color: var(--bg-color);
+            background-color: var(--card-bg);
         }
 
         .faq-container {
@@ -479,7 +408,7 @@
         }
 
         .faq-box {
-            background: var(--card-bg);
+            background: var(--bg-color);
             border: 1px solid var(--card-border);
             padding: 20px;
             border-radius: 6px;
@@ -497,9 +426,9 @@
             line-height: 1.5;
         }
 
-        /* 9. Bölüm: Üye Ol ve İletişim Formları Alanı */
+        /* 8. Bölüm: Üye Ol ve İletişim Formları Alanı */
         #iletisim-ve-uye {
-            background-color: var(--card-bg);
+            background-color: var(--bg-color);
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
@@ -509,7 +438,7 @@
         }
 
         .form-container {
-            background: var(--bg-color);
+            background: var(--card-bg);
             border: 1px solid var(--card-border);
             padding: 40px;
             border-radius: 8px;
@@ -539,7 +468,7 @@
             width: 100%;
             padding: 12px;
             border: 1px solid var(--card-border);
-            background-color: var(--card-bg);
+            background-color: var(--bg-color);
             color: var(--text-color);
             border-radius: 4px;
             font-size: 1rem;
@@ -656,7 +585,7 @@
 
     <!-- En Üst Son Dakika Duyuru Bandı -->
     <div class="ticker-band">
-        🚨 SON DAKİKA: Ankara ve İstanbul miting kayıtları yoğun talep üzerine başladı! Yerinizi hemen ayırtın.
+        🚨 DUYURU: Güncel gelişmeler ve resmi duyurular için sosyal medya hesaplarımızı takip edebilirsiniz.
     </div>
 
     <!-- Üst Menü -->
@@ -668,7 +597,6 @@
             <li><a href="#ilkeler">İlkeler</a></li>
             <li><a href="#basin">Basın</a></li>
             <li><a href="#haberler">Haberler</a></li>
-            <li><a href="#etkinlikler">Etkinlikler</a></li>
             <li><a href="#teskilat">Teşkilat</a></li>
             <li><a href="#sss">SSS</a></li>
             <li><a href="#iletisim-ve-uye">İletişim</a></li>
@@ -687,26 +615,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Canlı Sayaç / İstatistik Şeridi (YENİ) -->
-    <div class="stats-bar">
-        <div class="stat-item">
-            <h3>150.000+</h3>
-            <p>Kayıtlı Gönüllü</p>
-        </div>
-        <div class="stat-item">
-            <h3>81 İl</h3>
-            <p>Teşkilat Ağı</p>
-        </div>
-        <div class="stat-item">
-            <h3>1.2 Milyon</h3>
-            <p>Ulaşılan Destekçi</p>
-        </div>
-        <div class="stat-item">
-            <h3>500+</h3>
-            <p>Gerçekleşen Etkinlik</p>
-        </div>
-    </div>
 
     <!-- 2. Manifesto / Biz Kimiz Bölümü -->
     <section id="manifesto" class="section">
@@ -746,21 +654,21 @@
     <!-- 4. Basın Açıklamaları ve Konuşmalar -->
     <section id="basin" class="section">
         <h2 class="section-title">Basın Açıklamaları ve Konuşmalar</h2>
-        <p class="section-subtitle">Özgür Özel'in kamuoyuyla paylaştığı son açıklamalar ve değerlendirmeler</p>
+        <p class="section-subtitle">Kamuoyuyla paylaşılan son açıklamalar ve değerlendirmeler</p>
         <div class="basin-grid">
             <div class="basin-card">
                 <h3>"Milletimiz En Doğru Kararı Verecektir"</h3>
-                <p>Saha çalışmalarımız sırasında basına yaptığı açıklamada, halkın gösterdiği yoğun ilgiden duyduğu memnuniyeti dile getirdi.</p>
+                <p>Saha çalışmalarımız sırasında basına yapılan açıklamada, halkın gösterdiği yoğun ilgiden duyulan memnuniyet dile getirildi.</p>
                 <a href="#" class="basin-link">Konuşmanın Tamamını Oku &rarr;</a>
             </div>
             <div class="basin-card">
-                <h3>Ekonomi ve Hak Temelli Çözüm Raporu</h3>
-                <p>Milletin alım gücünü artıracak, üreticiyi koruyacak somut ekonomik politikaların detaylarını paylaştı.</p>
-                <a href="#" class="basin-link">Raporu İncele &rarr;</a>
+                <h3>Ekonomi ve Hak Temelli Yaklaşım</h3>
+                <p>Alım gücünü artıracak, üreticiyi koruyacak politikaların temel vizyonu kamuoyuyla paylaşıldı.</p>
+                <a href="#" class="basin-link">Detayları İncele &rarr;</a>
             </div>
             <div class="basin-card">
-                <h3>Gençlerle Buluşma Özel Açıklaması</h3>
-                <p>"Gelecek bizim ellerimizde şekillenecek" diyerek gençlerin ülke yönetiminde daha aktif söz sahibi olacağını vurguladı.</p>
+                <h3>Gençlerle Buluşma</h3>
+                <p>"Gelecek bizim ellerimizde şekillenecek" vurgusuyla gençlerin yönetimde aktif rol alacağı belirtildi.</p>
                 <a href="#" class="basin-link">Detayları Gör &rarr;</a>
             </div>
         </div>
@@ -769,62 +677,33 @@
     <!-- 5. Güncel Haberler Bölümü -->
     <section id="haberler" class="section">
         <h2 class="section-title">Son Gelişmeler ve Haberler</h2>
-        <p class="section-subtitle">Özgür Özel öncülüğünde yeni siyasi hareket ve saha çalışmalarından güncel başlıklar</p>
+        <p class="section-subtitle">Saha çalışmalarından ve güncel başlıklardan derlemeler</p>
         <div class="news-grid">
             <div class="news-card">
-                <img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?q=80&w=600&auto=format&fit=crop" alt="Yeni Parti Açıklaması">
+                <img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?q=80&w=600&auto=format&fit=crop" alt="Haber Görseli">
                 <div class="news-content">
-                    <h3>"Yeni Partimizi Milletimizle Kuruyoruz"</h3>
-                    <p>Özgür Özel, milletvekilleriyle birlikte yeni bir yola çıktıklarını belirterek, "Açık ara farkla ana muhalefet oluyoruz, iktidara yürüyoruz" mesajı verdi.</p>
+                    <h3>Halk Buluşmaları Aralıksız Sürüyor</h3>
+                    <p>Vatandaşların yoğun katılımı ve desteğiyle gerçekleştirilen buluşmalar yurdun dört bir yanında devam ediyor.</p>
                 </div>
             </div>
             <div class="news-card">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" alt="Meclis ve Grup Çalışmaları">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" alt="Meclis Görseli">
                 <div class="news-content">
-                    <h3>TBMM'de Tarihi Dönemeç</h3>
-                    <p>Meclis'te gerçekleştirilen son grup buluşmaları ve değerlendirmelerle birlikte yeni siyasi vizyonun yol haritası kamuoyuyla paylaşıldı.</p>
+                    <h3>Meclis ve Grup Çalışmaları</h3>
+                    <p>Meclis'te gerçekleştirilen değerlendirmeler ve yeni dönemin yol haritası kamuoyuyla paylaşıldı.</p>
                 </div>
             </div>
             <div class="news-card">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Halk Buluşmaları">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Toplantı Görseli">
                 <div class="news-content">
-                    <h3>Milletin Sesi Her Yerde Yükseliyor</h3>
-                    <p>İşçisinden memuruna, emeklisinden gencine toplumun tüm kesimleriyle omuz omuza gerçekleştirilen buluşmalar kararlılıkla devam ediyor.</p>
+                    <h3>Ortak Akıl ve İstişare Toplantıları</h3>
+                    <p>Toplumun tüm kesimleriyle bir araya gelerek ortak çözümler üretmeye devam ediyoruz.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Miting ve Etkinlik Takvimi -->
-    <section id="etkinlikler" class="section">
-        <h2 class="section-title">Miting ve Etkinlik Takvimi</h2>
-        <p class="section-subtitle">Halkla buluşma noktalarımız ve planlanan miting takvimimiz</p>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-date">10 Ağu 2026</div>
-                <div class="event-details">
-                    <h4>Ankara Büyük Halk Buluşması</h4>
-                    <p>Anıtpark Meydanı - Saat: 17:00</p>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-date">15 Ağu 2026</div>
-                <div class="event-details">
-                    <h4>İstanbul Gençlik Mitingi</h4>
-                    <p>Maltepe Etkinlik Alanı - Saat: 18:00</p>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-date">22 Ağu 2026</div>
-                <div class="event-details">
-                    <h4>İzmir Ekonomik Dönüşüm Zirvesi</h4>
-                    <p>İzmir Kültürpark - Saat: 14:00</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. Şehir Teşkilatları -->
+    <!-- 6. Şehir Teşkilatları -->
     <section id="teskilat" class="section">
         <h2 class="section-title">Şehir Teşkilatlarımız</h2>
         <p class="section-subtitle">Türkiye'nin dört bir yanında gönüllülerimizle büyümeye devam ediyoruz</p>
@@ -848,29 +727,29 @@
         </div>
     </section>
 
-    <!-- 8. SSS - Sıkça Sorulan Sorular -->
+    <!-- 7. SSS - Sıkça Sorulan Sorular -->
     <section id="sss" class="section">
         <h2 class="section-title">Sıkça Sorulan Sorular</h2>
         <p class="section-subtitle">Merak edilen konular hakkında hızlı bilgilendirmeler</p>
         <div class="faq-container">
             <div class="faq-box">
                 <h4>Nasıl gönüllü veya üye olabilirim?</h4>
-                <p>Sayfamızın alt kısmında yer alan "Aramıza Katılın" formunu doldurarak gönüllülük veya üyelik sürecinizi kolayca başlatabilirsiniz.</p>
+                <p>Sayfanın alt kısmında yer alan "Aramıza Katılın" formunu doldurarak gönüllülük veya üyelik sürecinizi kolayca başlatabilirsiniz.</p>
             </div>
             <div class="faq-box">
-                <h4>Etkinliklerden ve mitinglerden nasıl haberdar olabilirim?</h4>
-                <p>Yukarıdaki Miting ve Etkinlik Takvimi bölümünü düzenli takip edebilir veya sosyal medya hesaplarımızdan duyuruları inceleyebilirsiniz.</p>
+                <h4>Duyurulardan ve etkinliklerden nasıl haberdar olabilirim?</h4>
+                <p>Sosyal medya hesaplarımızı takip edebilir veya bültenimize katılarak güncellemeleri alabilirsiniz.</p>
             </div>
             <div class="faq-box">
                 <h4>Bulunduğum şehirde teşkilat ofisiniz var mı?</h4>
-                <p>Şehir Teşkilatları bölümünden ana merkezlerimizi görebilir, iletişim formu üzerinden yerel temsilciliklerimiz hakkında bilgi talep edebilirsiniz.</p>
+                <p>Şehir Teşkilatları bölümünden ana merkezlerimizi görebilir, iletişim formu üzerinden detaylı bilgi talep edebilirsiniz.</p>
             </div>
         </div>
     </section>
 
-    <!-- 9. Üye Ol ve İletişim Formları Alanı -->
+    <!-- 8. Üye Ol ve İletişim Formları Alanı -->
     <section id="iletisim-ve-uye" class="section">
-        <div id="iletisim-ve-uye" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; width: 100%; max-width: 1200px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; width: 100%; max-width: 1200px;">
             <div class="form-container">
                 <h3>Aramıza Katılın</h3>
                 <form>
