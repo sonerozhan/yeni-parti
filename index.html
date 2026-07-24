@@ -30,14 +30,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 15px 40px;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .navbar .logo {
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
             text-decoration: none;
         }
@@ -45,7 +45,7 @@
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 18px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
@@ -54,7 +54,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: 0.3s;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .navbar ul li a:hover {
@@ -212,7 +212,7 @@
             line-height: 1.5;
         }
 
-        /* 4. Bölüm: Basın Açıklamaları ve Konuşmalar */
+        /* 4. Bölüm: Basın Açıklamaları */
         #basin {
             background-color: #ffffff;
         }
@@ -304,9 +304,56 @@
             line-height: 1.5;
         }
 
-        /* 6. Bölüm: Teşkilatlar / İletişim Noktaları */
-        #teskilat {
+        /* 6. Bölüm: Miting ve Etkinlik Takvimi (YENİ) */
+        #etkinlikler {
             background-color: #ffffff;
+        }
+
+        .event-list {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .event-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            padding: 20px 25px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .event-date {
+            background: #c8102e;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            min-width: 100px;
+        }
+
+        .event-details h4 {
+            font-size: 1.15rem;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .event-details p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* 7. Bölüm: Şehir Teşkilatları */
+        #teskilat {
+            background-color: #f4f4f4;
         }
 
         .city-grid {
@@ -318,7 +365,7 @@
         }
 
         .city-box {
-            background: #fdfdfd;
+            background: #ffffff;
             border: 1px solid #e8e8e8;
             padding: 20px;
             border-radius: 6px;
@@ -336,9 +383,47 @@
             color: #555;
         }
 
-        /* 7. Bölüm: Üye Ol Formu */
-        #uye-ol {
+        /* 8. Bölüm: SSS - Sıkça Sorulan Sorular (YENİ) */
+        #sss {
+            background-color: #ffffff;
+        }
+
+        .faq-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-box {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .faq-box h4 {
+            color: #222;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .faq-box p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* 9. Bölüm: Üye Ol ve İletişim Formları Alanı */
+        #iletisim-ve-uye {
             background-color: #f4f4f4;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .form-container {
@@ -348,7 +433,13 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             width: 100%;
-            max-width: 550px;
+        }
+
+        .form-container h3 {
+            color: #c8102e;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
         }
 
         .form-group {
@@ -362,12 +453,17 @@
             color: #444;
         }
 
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
         }
 
         .form-submit {
@@ -477,8 +573,10 @@
             <li><a href="#ilkeler">İlkeler</a></li>
             <li><a href="#basin">Basın</a></li>
             <li><a href="#haberler">Haberler</a></li>
-            <li><a href="#teskilat">Teşkilatlar</a></li>
-            <li><a href="#uye-ol">Katıl</a></li>
+            <li><a href="#etkinlikler">Etkinlikler</a></li>
+            <li><a href="#teskilat">Teşkilat</a></li>
+            <li><a href="#sss">SSS</a></li>
+            <li><a href="#iletisim-ve-uye">İletişim</a></li>
         </ul>
     </nav>
 
@@ -488,7 +586,7 @@
             <h1>Türkiye'nin Geleceği İçin Yeni Bir Vizyon</h1>
             <p>"Asla pes etmek yok, omuz omuza kazanacağız." Halkın sesini dinleyen, adil ve şeffaf bir gelecek için birlikte yürüyoruz.</p>
             <div class="btn-group">
-                <a href="#uye-ol" class="btn btn-uye-main">Hemen Üye Ol</a>
+                <a href="#iletisim-ve-uye" class="btn btn-uye-main">Hemen Üye Ol</a>
                 <a href="#manifesto" class="btn btn-bilgi">Manifestomuzu Oku</a>
             </div>
         </div>
@@ -529,7 +627,7 @@
         </div>
     </section>
 
-    <!-- 4. Basın Açıklamaları ve Konuşmalar Bölümü -->
+    <!-- 4. Basın Açıklamaları ve Konuşmalar -->
     <section id="basin" class="section">
         <h2 class="section-title">Basın Açıklamaları ve Konuşmalar</h2>
         <p class="section-subtitle">Özgür Özel'in kamuoyuyla paylaştığı son açıklamalar ve değerlendirmeler</p>
@@ -581,7 +679,36 @@
         </div>
     </section>
 
-    <!-- 6. Şehir Teşkilatları / İletişim Noktaları -->
+    <!-- 6. Miting ve Etkinlik Takvimi (YENİ) -->
+    <section id="etkinlikler" class="section">
+        <h2 class="section-title">Miting ve Etkinlik Takvimi</h2>
+        <p class="section-subtitle">Halkla buluşma noktalarımız ve planlanan miting takvimimiz</p>
+        <div class="event-list">
+            <div class="event-item">
+                <div class="event-date">10 Ağu 2026</div>
+                <div class="event-details">
+                    <h4>Ankara Büyük Halk Buluşması</h4>
+                    <p>Anıtpark Meydanı - Saat: 17:00</p>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-date">15 Ağu 2026</div>
+                <div class="event-details">
+                    <h4>İstanbul Gençlik Mitingi</h4>
+                    <p>Maltepe Etkinlik Alanı - Saat: 18:00</p>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-date">22 Ağu 2026</div>
+                <div class="event-details">
+                    <h4>İzmir Ekonomik Dönüşüm Zirvesi</h4>
+                    <p>İzmir Kültürpark - Saat: 14:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Şehir Teşkilatları -->
     <section id="teskilat" class="section">
         <h2 class="section-title">Şehir Teşkilatlarımız</h2>
         <p class="section-subtitle">Türkiye'nin dört bir yanında gönüllülerimizle büyümeye devam ediyoruz</p>
@@ -605,11 +732,30 @@
         </div>
     </section>
 
-    <!-- 7. Üye Ol Form Bölümü -->
-    <section id="uye-ol" class="section">
-        <h2 class="section-title">Aramıza Katılın</h2>
-        <p class="section-subtitle">Değişimin bir parçası olmak ve bu yürüyüşte yer almak için formu doldurun</p>
+    <!-- 8. SSS - Sıkça Sorulan Sorular (YENİ) -->
+    <section id="sss" class="section">
+        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+        <p class="section-subtitle">Merak edilen konular hakkında hızlı bilgilendirmeler</p>
+        <div class="faq-container">
+            <div class="faq-box">
+                <h4>Nasıl gönüllü veya üye olabilirim?</h4>
+                <p>Sayfamızın alt kısmında yer alan "Aramıza Katılın" formunu doldurarak gönüllülük veya üyelik sürecinizi kolayca başlatabilirsiniz.</p>
+            </div>
+            <div class="faq-box">
+                <h4>Etkinliklerden ve mitinglerden nasıl haberdar olabilirim?</h4>
+                <p>Yukarıdaki Miting ve Etkinlik Takvimi bölümünü düzenli takip edebilir veya sosyal medya hesaplarımızdan duyuruları inceleyebilirsiniz.</p>
+            </div>
+            <div class="faq-box">
+                <h4>Bulunduğum şehirde teşkilat ofisiniz var mı?</h4>
+                <p>Şehir Teşkilatları bölümünden ana merkezlerimizi görebilir, iletişim formu üzerinden yerel temsilciliklerimiz hakkında bilgi talep edebilirsiniz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Üye Ol ve İletişim Formları Alanı (YENİ) -->
+    <section id="iletisim-ve-uye" class="section">
         <div class="form-container">
+            <h3>Aramıza Katılın</h3>
             <form>
                 <div class="form-group">
                     <label for="adsoyad">Ad Soyad</label>
@@ -632,6 +778,25 @@
                     </select>
                 </div>
                 <button type="submit" class="form-submit">Hemen Kaydol</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h3>Bize Ulaşın / Soru Sorun</h3>
+            <form>
+                <div class="form-group">
+                    <label for="iletisim-ad">Ad Soyad</label>
+                    <input type="text" id="iletisim-ad" placeholder="Adınız soyadınız" required>
+                </div>
+                <div class="form-group">
+                    <label for="iletisim-eposta">E-Posta Adresi</label>
+                    <input type="email" id="iletisim-eposta-adresi" placeholder="ornek@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="mesaj">Mesajınız / Öneriniz</label>
+                    <textarea id="mesaj" placeholder="Görüşlerinizi bizimle paylaşın..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Mesajı Gönder</button>
             </form>
         </div>
     </section>
