@@ -11,26 +11,63 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --card-border: #e0e0e0;
+            --nav-bg: rgba(200, 16, 46, 0.95);
+            --subtext-color: #666666;
+            --hero-bg: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('ozgur.jpg') no-repeat center center/cover;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --card-border: #333333;
+            --nav-bg: rgba(150, 10, 34, 0.95);
+            --subtext-color: #aaaaaa;
+            --hero-bg: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('ozgur.jpg') no-repeat center center/cover;
         }
 
         body, html {
             width: 100%;
             height: 100%;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* En Üst Son Dakika Duyuru Bandı */
+        .ticker-band {
+            background-color: #ffd700;
+            color: #1a1a1a;
+            padding: 8px 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
         }
 
         /* Sabit Üst Menü */
         .navbar {
             position: fixed;
-            top: 0;
+            top: 37px; /* Ticker bandı yüksekliği kadar aşağıda */
             left: 0;
             width: 100%;
-            background-color: rgba(200, 16, 46, 0.95);
+            background-color: var(--nav-bg);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
+            padding: 12px 40px;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
@@ -47,6 +84,7 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .navbar ul li a {
@@ -61,6 +99,21 @@
             color: #ffd700;
         }
 
+        .theme-toggle-btn {
+            background: #ffffff;
+            color: #c8102e;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .theme-toggle-btn:hover {
+            background: #ffd700;
+        }
+
         /* 1. Bölüm: Ana Ekran */
         .hero {
             width: 100%;
@@ -69,9 +122,9 @@
             align-items: center;
             justify-content: flex-start;
             padding: 0 80px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
-                        url('ozgur.jpg') no-repeat center center/cover;
+            background: var(--hero-bg);
             color: #ffffff;
+            margin-top: 37px;
         }
 
         .hero-content {
@@ -128,6 +181,30 @@
             color: #333333;
         }
 
+        /* Canlı Sayaç / İstatistik Şeridi (YENİ) */
+        .stats-bar {
+            background-color: #c8102e;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: #ffd700;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
         /* Ortak Bölüm Yapısı */
         .section {
             padding: 90px 80px;
@@ -147,26 +224,29 @@
 
         .section-subtitle {
             font-size: 1.1rem;
-            color: #666;
+            color: var(--subtext-color);
             margin-bottom: 50px;
             text-align: center;
         }
 
         /* 2. Bölüm: Manifesto / Biz Kimiz */
         #manifesto {
-            background-color: #ffffff;
+            background-color: var(--bg-color);
         }
 
         .manifesto-box {
             max-width: 900px;
-            background: #fdfdfd;
+            background: var(--card-bg);
             border-left: 5px solid #c8102e;
             padding: 40px;
             border-radius: 0 8px 8px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             line-height: 1.8;
             font-size: 1.1rem;
-            color: #444;
+            color: var(--text-color);
+            border-top: 1px solid var(--card-border);
+            border-right: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .manifesto-box p {
@@ -175,7 +255,7 @@
 
         /* 3. Bölüm: İlkelerimiz */
         #ilkeler {
-            background-color: #f4f4f4;
+            background-color: var(--card-bg);
         }
 
         .principles-grid {
@@ -187,7 +267,8 @@
         }
 
         .principle-card {
-            background: #fff;
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
             border-top: 4px solid #c8102e;
             padding: 30px 20px;
             border-radius: 6px;
@@ -202,19 +283,19 @@
 
         .principle-card h3 {
             font-size: 1.3rem;
-            color: #222;
+            color: var(--text-color);
             margin-bottom: 15px;
         }
 
         .principle-card p {
             font-size: 0.95rem;
-            color: #555;
+            color: var(--subtext-color);
             line-height: 1.5;
         }
 
         /* 4. Bölüm: Basın Açıklamaları */
         #basin {
-            background-color: #ffffff;
+            background-color: var(--bg-color);
         }
 
         .basin-grid {
@@ -226,8 +307,8 @@
         }
 
         .basin-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             border-radius: 8px;
             padding: 25px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
@@ -235,12 +316,12 @@
 
         .basin-card h3 {
             font-size: 1.2rem;
-            color: #222;
+            color: var(--text-color);
             margin-bottom: 10px;
         }
 
         .basin-card p {
-            color: #666;
+            color: var(--subtext-color);
             font-size: 0.95rem;
             line-height: 1.5;
             margin-bottom: 15px;
@@ -259,7 +340,7 @@
 
         /* 5. Bölüm: Haberler */
         #haberler {
-            background-color: #f4f4f4;
+            background-color: var(--card-bg);
         }
 
         .news-grid {
@@ -271,7 +352,8 @@
         }
 
         .news-card {
-            background: #ffffff;
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
@@ -294,19 +376,19 @@
 
         .news-card h3 {
             font-size: 1.25rem;
-            color: #222;
+            color: var(--text-color);
             margin-bottom: 10px;
         }
 
         .news-card p {
-            color: #666;
+            color: var(--subtext-color);
             font-size: 0.95rem;
             line-height: 1.5;
         }
 
-        /* 6. Bölüm: Miting ve Etkinlik Takvimi (YENİ) */
+        /* 6. Bölüm: Miting ve Etkinlik Takvimi */
         #etkinlikler {
-            background-color: #ffffff;
+            background-color: var(--bg-color);
         }
 
         .event-list {
@@ -321,8 +403,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #fdfdfd;
-            border: 1px solid #e0e0e0;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             padding: 20px 25px;
             border-radius: 6px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
@@ -342,18 +424,18 @@
 
         .event-details h4 {
             font-size: 1.15rem;
-            color: #222;
+            color: var(--text-color);
             margin-bottom: 5px;
         }
 
         .event-details p {
-            color: #666;
+            color: var(--subtext-color);
             font-size: 0.95rem;
         }
 
         /* 7. Bölüm: Şehir Teşkilatları */
         #teskilat {
-            background-color: #f4f4f4;
+            background-color: var(--card-bg);
         }
 
         .city-grid {
@@ -365,8 +447,8 @@
         }
 
         .city-box {
-            background: #ffffff;
-            border: 1px solid #e8e8e8;
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
             padding: 20px;
             border-radius: 6px;
             text-align: center;
@@ -380,12 +462,12 @@
 
         .city-box p {
             font-size: 0.9rem;
-            color: #555;
+            color: var(--subtext-color);
         }
 
-        /* 8. Bölüm: SSS - Sıkça Sorulan Sorular (YENİ) */
+        /* 8. Bölüm: SSS - Sıkça Sorulan Sorular */
         #sss {
-            background-color: #ffffff;
+            background-color: var(--bg-color);
         }
 
         .faq-container {
@@ -397,27 +479,27 @@
         }
 
         .faq-box {
-            background: #fdfdfd;
-            border: 1px solid #e0e0e0;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             padding: 20px;
             border-radius: 6px;
         }
 
         .faq-box h4 {
-            color: #222;
+            color: var(--text-color);
             font-size: 1.1rem;
             margin-bottom: 8px;
         }
 
         .faq-box p {
-            color: #666;
+            color: var(--subtext-color);
             font-size: 0.95rem;
             line-height: 1.5;
         }
 
         /* 9. Bölüm: Üye Ol ve İletişim Formları Alanı */
         #iletisim-ve-uye {
-            background-color: #f4f4f4;
+            background-color: var(--card-bg);
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
@@ -427,8 +509,8 @@
         }
 
         .form-container {
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
@@ -450,13 +532,15 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #444;
+            color: var(--text-color);
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--card-border);
+            background-color: var(--card-bg);
+            color: var(--text-color);
             border-radius: 4px;
             font-size: 1rem;
         }
@@ -540,7 +624,12 @@
         /* Mobil Uyum */
         @media (max-width: 768px) {
             .navbar {
-                padding: 15px 20px;
+                padding: 12px 20px;
+                top: 55px;
+            }
+            .ticker-band {
+                font-size: 0.8rem;
+                padding: 6px 10px;
             }
             .navbar ul {
                 display: none;
@@ -549,6 +638,7 @@
                 padding: 0 20px;
                 text-align: center;
                 justify-content: center;
+                margin-top: 55px;
             }
             .hero h1 {
                 font-size: 2.3rem;
@@ -562,7 +652,12 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="light">
+
+    <!-- En Üst Son Dakika Duyuru Bandı -->
+    <div class="ticker-band">
+        🚨 SON DAKİKA: Ankara ve İstanbul miting kayıtları yoğun talep üzerine başladı! Yerinizi hemen ayırtın.
+    </div>
 
     <!-- Üst Menü -->
     <nav class="navbar">
@@ -577,6 +672,7 @@
             <li><a href="#teskilat">Teşkilat</a></li>
             <li><a href="#sss">SSS</a></li>
             <li><a href="#iletisim-ve-uye">İletişim</a></li>
+            <li><button class="theme-toggle-btn" onclick="toggleTheme()">🌙 Gece Modu</button></li>
         </ul>
     </nav>
 
@@ -591,6 +687,26 @@
             </div>
         </div>
     </header>
+
+    <!-- Canlı Sayaç / İstatistik Şeridi (YENİ) -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>150.000+</h3>
+            <p>Kayıtlı Gönüllü</p>
+        </div>
+        <div class="stat-item">
+            <h3>81 İl</h3>
+            <p>Teşkilat Ağı</p>
+        </div>
+        <div class="stat-item">
+            <h3>1.2 Milyon</h3>
+            <p>Ulaşılan Destekçi</p>
+        </div>
+        <div class="stat-item">
+            <h3>500+</h3>
+            <p>Gerçekleşen Etkinlik</p>
+        </div>
+    </div>
 
     <!-- 2. Manifesto / Biz Kimiz Bölümü -->
     <section id="manifesto" class="section">
@@ -679,7 +795,7 @@
         </div>
     </section>
 
-    <!-- 6. Miting ve Etkinlik Takvimi (YENİ) -->
+    <!-- 6. Miting ve Etkinlik Takvimi -->
     <section id="etkinlikler" class="section">
         <h2 class="section-title">Miting ve Etkinlik Takvimi</h2>
         <p class="section-subtitle">Halkla buluşma noktalarımız ve planlanan miting takvimimiz</p>
@@ -732,7 +848,7 @@
         </div>
     </section>
 
-    <!-- 8. SSS - Sıkça Sorulan Sorular (YENİ) -->
+    <!-- 8. SSS - Sıkça Sorulan Sorular -->
     <section id="sss" class="section">
         <h2 class="section-title">Sıkça Sorulan Sorular</h2>
         <p class="section-subtitle">Merak edilen konular hakkında hızlı bilgilendirmeler</p>
@@ -752,52 +868,54 @@
         </div>
     </section>
 
-    <!-- 9. Üye Ol ve İletişim Formları Alanı (YENİ) -->
+    <!-- 9. Üye Ol ve İletişim Formları Alanı -->
     <section id="iletisim-ve-uye" class="section">
-        <div class="form-container">
-            <h3>Aramıza Katılın</h3>
-            <form>
-                <div class="form-group">
-                    <label for="adsoyad">Ad Soyad</label>
-                    <input type="text" id="adsoyad" placeholder="Adınızı ve soyadınızı girin" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefon">Telefon Numarası</label>
-                    <input type="tel" id="telefon" placeholder="05XX XXX XX XX" required>
-                </div>
-                <div class="form-group">
-                    <label for="sehir">Şehir</label>
-                    <input type="text" id="sehir" placeholder="Yaşadığınız şehir" required>
-                </div>
-                <div class="form-group">
-                    <label for="ilgi">Katılım Amacınız</label>
-                    <select id="ilgi">
-                        <option>Gönüllü Olarak Desteklemek İstiyorum</option>
-                        <option>Parti Üyesi Olmak İstiyorum</option>
-                        <option>Gençlik Kollarına Katılmak İstiyorum</option>
-                    </select>
-                </div>
-                <button type="submit" class="form-submit">Hemen Kaydol</button>
-            </form>
-        </div>
+        <div id="iletisim-ve-uye" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; width: 100%; max-width: 1200px;">
+            <div class="form-container">
+                <h3>Aramıza Katılın</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="adsoyad">Ad Soyad</label>
+                        <input type="text" id="adsoyad" placeholder="Adınızı ve soyadınızı girin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Telefon Numarası</label>
+                        <input type="tel" id="telefon" placeholder="05XX XXX XX XX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sehir">Şehir</label>
+                        <input type="text" id="sehir" placeholder="Yaşadığınız şehir" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ilgi">Katılım Amacınız</label>
+                        <select id="ilgi">
+                            <option>Gönüllü Olarak Desteklemek İstiyorum</option>
+                            <option>Parti Üyesi Olmak İstiyorum</option>
+                            <option>Gençlik Kollarına Katılmak İstiyorum</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-submit">Hemen Kaydol</button>
+                </form>
+            </div>
 
-        <div class="form-container">
-            <h3>Bize Ulaşın / Soru Sorun</h3>
-            <form>
-                <div class="form-group">
-                    <label for="iletisim-ad">Ad Soyad</label>
-                    <input type="text" id="iletisim-ad" placeholder="Adınız soyadınız" required>
-                </div>
-                <div class="form-group">
-                    <label for="iletisim-eposta">E-Posta Adresi</label>
-                    <input type="email" id="iletisim-eposta-adresi" placeholder="ornek@mail.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="mesaj">Mesajınız / Öneriniz</label>
-                    <textarea id="mesaj" placeholder="Görüşlerinizi bizimle paylaşın..." required></textarea>
-                </div>
-                <button type="submit" class="form-submit">Mesajı Gönder</button>
-            </form>
+            <div class="form-container">
+                <h3>Bize Ulaşın / Soru Sorun</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="iletisim-ad">Ad Soyad</label>
+                        <input type="text" id="iletisim-ad" placeholder="Adınız soyadınız" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="iletisim-eposta">E-Posta Adresi</label>
+                        <input type="email" id="iletisim-eposta-adresi" placeholder="ornek@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mesaj">Mesajınız / Öneriniz</label>
+                        <textarea id="mesaj" placeholder="Görüşlerinizi bizimle paylaşın..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Mesajı Gönder</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -817,6 +935,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- Gece / Gündüz Modu Değiştirme Scripti -->
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-toggle-btn');
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                btn.innerHTML = '☀️ Gündüz Modu';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                btn.innerHTML = '🌙 Gece Modu';
+            }
+        }
+    </script>
 
 </body>
 </html>
