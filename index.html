@@ -19,48 +19,71 @@
         
         /* Arka plan fotoğrafı ve başlık */
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('ozgur-ozel.jpg') center/cover;
+            background: linear-gradient(135deg, #c41e3a 0%, #d32f2f 100%);
             color: white;
             text-align: center;
             padding: 150px 20px;
             position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('ozgur-ozel.jpg') right/contain no-repeat;
+            opacity: 0.15;
+            z-index: 0;
         }
         
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         .btn {
             display: inline-block;
-            background: #d32f2f;
-            color: white;
-            padding: 12px 30px;
+            background: white;
+            color: #c41e3a;
+            padding: 14px 35px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             margin: 10px;
             cursor: pointer;
             border: none;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1em;
         }
         
         .btn:hover {
-            background: #b71c1c;
+            background: #f0f0f0;
+            transform: scale(1.05);
         }
         
         /* Navigasyon */
         nav {
-            background: #222;
+            background: #8b0000;
             padding: 15px;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         nav a {
@@ -68,10 +91,12 @@
             text-decoration: none;
             margin: 0 20px;
             font-weight: bold;
+            font-size: 1.1em;
         }
         
         nav a:hover {
-            color: #d32f2f;
+            color: #ffeb3b;
+            border-bottom: 2px solid #ffeb3b;
         }
         
         /* Haberler bölümü */
@@ -79,55 +104,78 @@
             padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            background: linear-gradient(to bottom, #fff9f9, #ffffff);
         }
         
         .haberler h2 {
             text-align: center;
             margin-bottom: 40px;
-            font-size: 2em;
-            color: #d32f2f;
+            font-size: 2.5em;
+            color: #c41e3a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .haber-card {
-            background: #f5f5f5;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #d32f2f;
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 6px solid #c41e3a;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.15);
+            transition: transform 0.3s;
+        }
+        
+        .haber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(196, 30, 58, 0.25);
+        }
+        
+        .haber-resim {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
             border-radius: 5px;
+            margin-bottom: 15px;
         }
         
         .haber-card h3 {
-            color: #222;
+            color: #c41e3a;
             margin-bottom: 10px;
+            font-size: 1.5em;
         }
         
         .haber-card p {
-            color: #666;
+            color: #555;
             margin-bottom: 10px;
+            line-height: 1.8;
         }
         
         .haber-tarih {
             font-size: 0.9em;
             color: #999;
+            font-weight: bold;
         }
         
         /* Destekçiler galeri */
         .destekcieler {
             padding: 50px 20px;
-            background: #f9f9f9;
+            background: linear-gradient(135deg, #c41e3a 0%, #d32f2f 100%);
             text-align: center;
         }
         
         .destekcieler h2 {
             margin-bottom: 40px;
-            font-size: 2em;
-            color: #d32f2f;
+            font-size: 2.5em;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .galeri {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -136,20 +184,25 @@
             background: white;
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .galeri-item:hover {
+            transform: scale(1.08);
         }
         
         .galeri-item img {
             width: 100%;
-            height: 120px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 5px;
+            border-radius: 8px;
         }
         
         .galeri-item p {
-            margin-top: 10px;
+            margin-top: 12px;
             font-weight: bold;
-            color: #333;
+            color: #c41e3a;
         }
         
         /* Üye ol formu */
@@ -157,12 +210,15 @@
             padding: 50px 20px;
             max-width: 600px;
             margin: 0 auto;
+            background: #fff9f9;
         }
         
         .uye-ol h2 {
             text-align: center;
             margin-bottom: 30px;
-            color: #d32f2f;
+            color: #c41e3a;
+            font-size: 2.2em;
+            text-transform: uppercase;
         }
         
         .form-group {
@@ -171,17 +227,26 @@
         
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: #333;
         }
         
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 12px;
+            border: 2px solid #ddd;
             border-radius: 5px;
             font-family: Arial;
+            font-size: 1em;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c41e3a;
+            box-shadow: 0 0 5px rgba(196, 30, 58, 0.3);
         }
         
         .form-group textarea {
@@ -189,9 +254,25 @@
             min-height: 100px;
         }
         
+        .submit-btn {
+            width: 100%;
+            background: #c41e3a;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        
+        .submit-btn:hover {
+            background: #8b0000;
+        }
+        
         /* Footer */
         footer {
-            background: #222;
+            background: #1a1a1a;
             color: white;
             text-align: center;
             padding: 30px;
@@ -220,17 +301,99 @@
         <h2>Son Haberler</h2>
         
         <div class="haber-card">
+            <img src="haber1.jpg" alt="Haber 1" class="haber-resim">
             <h3>Yeni Program Açıklandı</h3>
             <p>Partimizin yeni sosyal program hakkında detaylar açıklandı. Eğitim, sağlık ve istihdam alanlarında önemli adımlar atılacak.</p>
             <span class="haber-tarih">24 Temmuz 2026</span>
         </div>
         
         <div class="haber-card">
+            <img src="haber2.jpg" alt="Haber 2" class="haber-resim">
             <h3>Üyelik Kampanyası Başladı</h3>
             <p>Partiye katılmak isteyenlerin başvuruları kabul edilmeye başlandı. Tüm Türkiye'den üye alınmaktadır.</p>
             <span class="haber-tarih">20 Temmuz 2026</span>
         </div>
         
         <div class="haber-card">
+            <img src="haber3.jpg" alt="Haber 3" class="haber-resim">
             <h3>Halka Açık Etkinlik</h3>
-            <p>Partimizin ilk büyük
+            <p>Partimizin ilk büyük halka açık etkinliği başarıyla gerçekleştirildi. Binlerce vatandaş katılım sağladı.</p>
+            <span class="haber-tarih">18 Temmuz 2026</span>
+        </div>
+    </section>
+    
+    <!-- Destekçiler -->
+    <section id="destekcieler" class="destekcieler">
+        <h2>Destekçilerimiz</h2>
+        
+        <div class="galeri">
+            <div class="galeri-item">
+                <img src="destekci1.jpg" alt="Destekçi 1">
+                <p>Destekçi Adı 1</p>
+            </div>
+            <div class="galeri-item">
+                <img src="destekci2.jpg" alt="Destekçi 2">
+                <p>Destekçi Adı 2</p>
+            </div>
+            <div class="galeri-item">
+                <img src="destekci3.jpg" alt="Destekçi 3">
+                <p>Destekçi Adı 3</p>
+            </div>
+            <div class="galeri-item">
+                <img src="destekci4.jpg" alt="Destekçi 4">
+                <p>Destekçi Adı 4</p>
+            </div>
+            <div class="galeri-item">
+                <img src="destekci5.jpg" alt="Destekçi 5">
+                <p>Destekçi Adı 5</p>
+            </div>
+            <div class="galeri-item">
+                <img src="destekci6.jpg" alt="Destekçi 6">
+                <p>Destekçi Adı 6</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Üye Ol -->
+    <section id="uye-ol-section" class="uye-ol">
+        <h2>Üye Ol</h2>
+        
+        <form>
+            <div class="form-group">
+                <label for="ad">Ad Soyad:</label>
+                <input type="text" id="ad" name="ad" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefon">Telefon:</label>
+                <input type="tel" id="telefon" name="telefon" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sehir">Şehir:</label>
+                <input type="text" id="sehir" name="sehir" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mesaj">Mesaj:</label>
+                <textarea id="mesaj" name="mesaj"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Üye Ol</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="iletisim">
+        <h3>İletişim</h3>
+        <p>Email: info@ozgurozelpartisi.com</p>
+        <p>Telefon: +90 (212) 555-0000</p>
+        <p>&copy; 2026 Özgür Özel Partisi. Tüm Hakları Saklıdır.</p>
+    </footer>
+</body>
+</html>
