@@ -3,475 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özgür Özel - Yeni Partisi</title>
+    <title>Özgür Özel - Yeni Parti</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
         }
-        
-        /* Navigation */
-        nav {
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Üst Menü */
+        .navbar {
+            background-color: #c8102e;
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
         }
-        
-        .logo {
-            font-size: 1.8em;
+
+        .navbar .logo {
+            color: #ffffff;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #c41e3a;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .nav-links a {
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: #c41e3a;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-            color: white;
-            padding: 100px 50px;
+
+        .navbar .nav-links {
+            list-style: none;
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Ana Karşılama Alanı (Hero) - Resim Arkaya Alındı */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
             align-items: center;
-            min-height: 600px;
+            justify-content: space-between;
+            padding: 100px 80px 50px 80px;
+            margin-top: 60px; /* Navbar payı */
+            
+            /* Kırmızı filtre ve arkadaki resim */
+            background: linear-gradient(rgba(200, 16, 46, 0.85), rgba(200, 16, 46, 0.85)), 
+                        url('buraya-arkaplan-fotografinin-linki-gelecek.jpg') no-repeat center center/cover;
+            color: #ffffff;
         }
-        
+
         .hero-content {
-            flex: 1;
             max-width: 600px;
+            z-index: 2;
         }
-        
+
         .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
+            font-size: 3rem;
             line-height: 1.2;
+            margin-bottom: 20px;
         }
-        
+
         .hero p {
-            font-size: 1.3em;
+            font-size: 1.1rem;
             margin-bottom: 30px;
+            line-height: 1.5;
             opacity: 0.95;
         }
-        
-        .hero-buttons {
+
+        /* Butonlar */
+        .btn-group {
             display: flex;
             gap: 15px;
         }
-        
-        .btn-primary, .btn-secondary {
-            padding: 15px 40px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
             cursor: pointer;
-            transition: all 0.3s;
         }
-        
-        .btn-primary {
-            background: white;
-            color: #c41e3a;
+
+        .btn-uye {
+            background-color: #ffffff;
+            color: #c8102e;
         }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+        .btn-uye:hover {
+            background-color: #f0f0f0;
         }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
+
+        .btn-bilgi {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
         }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #c41e3a;
+
+        .btn-bilgi:hover {
+            background-color: #ffffff;
+            color: #c8102e;
         }
-        
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .about h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #c41e3a;
-        }
-        
-        .about p {
-            font-size: 1.1em;
-            color: #666;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .feature-card {
-            background: #f9f9f9;
-            padding: 40px;
-            border-radius: 10px;
-            border-top: 4px solid #c41e3a;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #c41e3a;
-        }
-        
-        .feature-card p {
-            color: #666;
-        }
-        
-        /* News Section */
-        .news {
-            padding: 80px 50px;
-            background: #f5f5f5;
-        }
-        
-        .news-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .news h2 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            text-align: center;
-            color: #c41e3a;
-        }
-        
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .news-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .news-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .news-card-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #c41e3a, #8b0000);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3em;
-        }
-        
-        .news-card-content {
-            padding: 25px;
-        }
-        
-        .news-card h3 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .news-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .news-date {
-            font-size: 0.9em;
-            color: #999;
-        }
-        
-        /* Membership Section */
-        .membership {
-            padding: 80px 50px;
-            background: white;
-        }
-        
-        .membership-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .membership h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #c41e3a;
-        }
-        
-        .membership p {
-            font-size: 1.1em;
-            color: #666;
-            margin-bottom: 40px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #c41e3a;
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: #c41e3a;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: #8b0000;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 50px;
-            text-align: center;
-        }
-        
-        footer p {
-            margin-bottom: 10px;
-        }
-        
-        /* Responsive */
+
+        /* Sağ taraftaki eski küçük kutuyu kaldırdık, çünkü resim artık tüm arka plana yayıldı */
+
+        /* Mobil Uyumluluk */
         @media (max-width: 768px) {
             .hero {
+                padding: 40px 20px;
                 flex-direction: column;
-                padding: 50px 20px;
+                text-align: center;
             }
-            
-            .features, .news-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                gap: 15px;
-            }
-            
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 2.2rem;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .navbar .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Özgür Özel</div>
+
+    <!-- Üst Menü -->
+    <nav class="navbar">
+        <a href="#" class="logo">Özgür Özel</a>
         <ul class="nav-links">
-            <li><a href="#about">Hakkında</a></li>
-            <li><a href="#news">Haberler</a></li>
-            <li><a href="#membership">Üye Ol</a></li>
-            <li><a href="#contact">İletişim</a></li>
+            <li><a href="#hakkinda">Hakkında</a></li>
+            <li><a href="#haberler">Haberler</a></li>
+            <li><a href="#uye">Üye Ol</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
         </ul>
     </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero">
+
+    <!-- Hero Bölümü (Arka planı resimli, yazıları solda) -->
+    <header class="hero">
         <div class="hero-content">
             <h1>Türkiye'nin Geleceği İçin Yeni Bir Vizyon</h1>
-            <p>Halkın sesini duyuran, adil ve şeffaf bir siyaset için birlikte hareket edelim.</p>
-            <div class="hero-buttons">
-                <button class="btn-primary" onclick="document.getElementById('membership').scrollIntoView()">Üye Ol</button>
-                <button class="btn-secondary">Daha Fazla Bilgi</button>
+            <p>Halkın sesini duyuran, adil ve şeffaf bir siyaset için birlikte hareket edelim. Özgür bir gelecek omuz omuza kurulur.</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-uye">Üye Ol</a>
+                <a href="#" class="btn btn-bilgi">Daha Fazla Bilgi</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="ozgur-ozel.jpg" alt="Özgür Özel" style="max-width: 300px;">
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>Partimiz Kimdir?</h2>
-        <p>Demokratik değerlere inanan, halkın çıkarlarını ön planda tutan, şeffaf ve hesap verebilir bir yönetim anlayışını benimseyen yeni bir siyasi harekettir.</p>
-        
-        <div class="features">
-            <div class="feature-card">
-                <h3>🎯 Misyon</h3>
-                <p>Türkiye'de adil, şeffaf ve katılımcı bir yönetim sistemini kurmak.</p>
-            </div>
-            <div class="feature-card">
-                <h3>💡 Vizyon</h3>
-                <p>Halkın güvenini kazanmış, ekonomik kalkınmayı sağlayan bir Türkiye.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🤝 Değerler</h3>
-                <p>Demokrasi, şeffaflık, adalet ve halk odaklı politikalar.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- News Section -->
-    <section id="news" class="news">
-        <div class="news-container">
-            <h2>Son Haberler</h2>
-            
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-card-image">📰</div>
-                    <div class="news-card-content">
-                        <h3>Yeni Program Açıklandı</h3>
-                        <p>Partimizin ekonomi ve istihdam politikaları hakkında detaylı bilgi.</p>
-                        <span class="news-date">24 Temmuz 2026</span>
-                    </div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="news-card-image">📢</div>
-                    <div class="news-card-content">
-                        <h3>Üyelik Kampanyası</h3>
-                        <p>Partiye katılmak isteyenlerin başvuruları kabul edilmektedir.</p>
-                        <span class="news-date">20 Temmuz 2026</span>
-                    </div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="news-card-image">🎉</div>
-                    <div class="news-card-content">
-                        <h3>Halka Açık Etkinlik</h3>
-                        <p>Partimizin ilk büyük halka açık etkinliği başarıyla tamamlandı.</p>
-                        <span class="news-date">18 Temmuz 2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Membership Section -->
-    <section id="membership" class="membership">
-        <div class="membership-container">
-            <h2>Üye Ol</h2>
-            <p>Partimizin bir üyesi olarak bu harekete katıl ve değişimi başlat.</p>
-            
-            <form>
-                <div class="form-group">
-                    <label for="name">Ad Soyad</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Telefon</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="city">Şehir</label>
-                    <input type="text" id="city" name="city" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Mesajınız</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Üye Ol</button>
-            </form>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer id="contact">
-        <h3>İletişim</h3>
-        <p>
+    </header>
+
+</body>
+</html>v
