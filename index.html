@@ -10,13 +10,56 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Sayfa içi geçişleri yumuşatır */
         }
 
         body, html {
             width: 100%;
             height: 100%;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
+        /* Sabit Üst Menü */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(200, 16, 46, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .navbar .logo {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* 1. Bölüm: Ana Ekran (Arka Planı Resimli Hero) */
         .hero {
             width: 100%;
             height: 100vh;
@@ -24,8 +67,6 @@
             align-items: center;
             justify-content: flex-start;
             padding: 0 80px;
-            
-            /* Yüklediğin dosyanın adı burada yazıyor */
             background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), 
                         url('ozgur.jpg') no-repeat center center/cover;
             color: #ffffff;
@@ -61,14 +102,15 @@
             font-weight: bold;
             transition: 0.3s;
             cursor: pointer;
+            display: inline-block;
         }
 
-        .btn-uye {
+        .btn-uye-main {
             background-color: #c8102e;
             color: #ffffff;
         }
 
-        .btn-uye:hover {
+        .btn-uye-main:hover {
             background-color: #a00d24;
         }
 
@@ -83,7 +125,129 @@
             color: #333333;
         }
 
+        /* Ortak Bölüm Tasarımları */
+        .section {
+            padding: 100px 80px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #c8102e;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* 2. Bölüm: Haberler */
+        #haberler {
+            background-color: #ffffff;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .news-card {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .news-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* 3. Bölüm: Üye Ol Formu */
+        #uye-ol {
+            background-color: #f1f1f1;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-submit {
+            width: 100%;
+            background-color: #c8102e;
+            color: #ffffff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-submit:hover {
+            background-color: #a00d24;
+        }
+
+        /* Alt Bilgi (Footer) */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobil Uyum */
         @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            .navbar ul {
+                display: none; /* Mobilde menü gizlendi */
+            }
             .hero {
                 padding: 0 20px;
                 text-align: center;
@@ -95,21 +259,81 @@
             .btn-group {
                 justify-content: center;
             }
+            .section {
+                padding: 60px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
+    <!-- Üst Menü (Sayfa İçi Linkler) -->
+    <nav class="navbar">
+        <a href="#" class="logo">Özgür Özel</a>
+        <ul>
+            <li><a href="#hero">Ana Sayfa</a></li>
+            <li><a href="#haberler">Haberler</a></li>
+            <li><a href="#uye-ol">Üye Ol</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. Ana Karşılama Bölümü -->
+    <header id="hero" class="hero">
         <div class="hero-content">
             <h1>Türkiye'nin Geleceği İçin Yeni Bir Vizyon</h1>
             <p>Halkın sesini duyuran, adil ve şeffaf bir siyaset için birlikte hareket edelim. Özgür bir gelecek omuz omuza kurulur.</p>
             <div class="btn-group">
-                <a href="#" class="btn btn-uye">Üye Ol</a>
-                <a href="#" class="btn btn-bilgi">Daha Fazla Bilgi</a>
+                <a href="#uye-ol" class="btn btn-uye-main">Üye Ol</a>
+                <a href="#haberler" class="btn btn-bilgi">Haberleri İncele</a>
             </div>
         </div>
     </header>
+
+    <!-- 2. Haberler Bölümü -->
+    <section id="haberler" class="section">
+        <h2 class="section-title">Son Gelişmeler ve Haberler</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <h3>Halkla Buluşma Mitingi Gerçekleşti</h3>
+                <p>Anadolu'nun dört bir yanından gelen vatandaşlarımızla kucaklaştık. Ortak geleceğimiz için atacağımız adımları konuştuk.</p>
+            </div>
+            <div class="news-card">
+                <h3>Yeni Vizyon Raporu Açıklandı</h3>
+                <p>Ekonomiden eğitime, adaletten sağlığa kadar ülkenin tüm sorunlarına kalıcı çözümler getirecek raporumuz kamuoyuyla paylaşıldı.</p>
+            </div>
+            <div class="news-card">
+                <h3>Gençlik Kolları Toplantısı</h3>
+                <p>Geleceğimizin teminatı olan gençlerimizle bir araya geldik. Yenilikçi projelerini dinledik ve destek mesajımızı yineledik.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Üye Ol Form Bölümü -->
+    <section id="uye-ol" class="section">
+        <h2 class="section-title">Aramıza Katılın, Gücümüze Güç Katın</h2>
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="adsoyad">Ad Soyad</label>
+                    <input type="text" id="adsoyad" placeholder="Adınızı ve soyadınızı girin" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon Numarası</label>
+                    <input type="tel" id="telefon" placeholder="05XX XXX XX XX" required>
+                </div>
+                <div class="form-group">
+                    <label for="sehir">Şehir</label>
+                    <input type="text" id="sehir" placeholder="Yaşadığınız şehir" required>
+                </div>
+                <button type="submit" class="form-submit">Hemen Üye Ol</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Alt Bilgi -->
+    <footer>
+        <p>&copy; 2026 - Tüm Hakları Saklıdır. Türkiye'nin Geleceği İçin Omuz Omuza.</p>
+    </footer>
 
 </body>
 </html>
