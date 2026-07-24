@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özgür Özel - Yeni Parti</title>
+    <title>Özgür Özel - Türkiye'nin Geleceği</title>
     <style>
         * {
             margin: 0;
@@ -45,7 +45,7 @@
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
 
         .navbar ul li a {
@@ -53,6 +53,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: 0.3s;
+            font-size: 0.95rem;
         }
 
         .navbar ul li a:hover {
@@ -67,13 +68,13 @@
             align-items: center;
             justify-content: flex-start;
             padding: 0 80px;
-            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
                         url('ozgur.jpg') no-repeat center center/cover;
             color: #ffffff;
         }
 
         .hero-content {
-            max-width: 650px;
+            max-width: 700px;
         }
 
         .hero h1 {
@@ -84,10 +85,11 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 30px;
             line-height: 1.6;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            color: #f1f1f1;
         }
 
         .btn-group {
@@ -125,10 +127,9 @@
             color: #333333;
         }
 
-        /* Ortak Bölüm */
+        /* Ortak Bölüm Yapısı */
         .section {
-            padding: 100px 80px;
-            min-height: 80vh;
+            padding: 90px 80px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -138,14 +139,60 @@
         .section-title {
             font-size: 2.5rem;
             color: #c8102e;
-            margin-bottom: 40px;
+            margin-bottom: 15px;
             text-align: center;
             font-weight: bold;
         }
 
-        /* 2. Bölüm: Haberler (Resimli Kartlar) */
-        #haberler {
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* 2. Bölüm: İlkelerimiz (Değerler) */
+        #ilkeler {
             background-color: #ffffff;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .principle-card {
+            background: #fff;
+            border-top: 4px solid #c8102e;
+            padding: 30px 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .principle-card h3 {
+            font-size: 1.3rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .principle-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* 3. Bölüm: Haberler */
+        #haberler {
+            background-color: #f4f4f4;
         }
 
         .news-grid {
@@ -157,11 +204,10 @@
         }
 
         .news-card {
-            background: #fdfdfd;
-            border: 1px solid #e0e0e0;
+            background: #ffffff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
 
@@ -180,8 +226,8 @@
         }
 
         .news-card h3 {
-            font-size: 1.3rem;
-            color: #333;
+            font-size: 1.25rem;
+            color: #222;
             margin-bottom: 10px;
         }
 
@@ -191,18 +237,19 @@
             line-height: 1.5;
         }
 
-        /* 3. Bölüm: Üye Ol Formu */
+        /* 4. Bölüm: Üye Ol Formu */
         #uye-ol {
-            background-color: #f1f1f1;
+            background-color: #ffffff;
         }
 
         .form-container {
-            background: #ffffff;
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             width: 100%;
-            max-width: 500px;
+            max-width: 550px;
         }
 
         .form-group {
@@ -216,7 +263,7 @@
             color: #444;
         }
 
-        .form-group input {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -228,7 +275,7 @@
             width: 100%;
             background-color: #c8102e;
             color: #ffffff;
-            padding: 12px;
+            padding: 14px;
             border: none;
             border-radius: 4px;
             font-size: 1rem;
@@ -241,13 +288,57 @@
             background-color: #a00d24;
         }
 
-        /* Alt Bilgi */
+        /* Alt Bilgi ve Sosyal Medya */
         footer {
-            background-color: #222;
+            background-color: #1a1a1a;
             color: #fff;
+            padding: 50px 20px 20px 20px;
             text-align: center;
-            padding: 30px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #c8102e;
+        }
+
+        .footer-content p {
+            color: #aaa;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: #fff;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #c8102e;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 20px;
             font-size: 0.9rem;
+            color: #777;
         }
 
         /* Mobil Uyum */
@@ -277,12 +368,13 @@
 </head>
 <body>
 
-    <!-- Üst Menü (Yazısı Değiştirildi) -->
+    <!-- Üst Menü -->
     <nav class="navbar">
-        <a href="#" class="logo">Değişim ve Vizyon</a>
+        <a href="#" class="logo">Özgür Özel | Vizyon</a>
         <ul>
             <li><a href="#hero">Ana Sayfa</a></li>
-            <li><a href="#haberler">Güncel Haberler</a></li>
+            <li><a href="#ilkeler">İlkelerimiz</a></li>
+            <li><a href="#haberler">Haberler</a></li>
             <li><a href="#uye-ol">Partiye Katıl</a></li>
         </ul>
     </nav>
@@ -291,52 +383,71 @@
     <header id="hero" class="hero">
         <div class="hero-content">
             <h1>Türkiye'nin Geleceği İçin Yeni Bir Vizyon</h1>
-            <p>Halkın sesini duyuran, adil ve şeffaf bir siyaset için birlikte hareket edelim. Özgür bir gelecek omuz omuza kurulur.</p>
+            <p>"Asla pes etmek yok, omuz omuza kazanacağız." Halkın sesini dinleyen, adil ve şeffaf bir gelecek için birlikte yürüyoruz.</p>
             <div class="btn-group">
-                <a href="#uye-ol" class="btn btn-uye-main">Üye Ol</a>
-                <a href="#haberler" class="btn btn-bilgi">Haberleri İncele</a>
+                <a href="#uye-ol" class="btn btn-uye-main">Hemen Üye Ol</a>
+                <a href="#ilkeler" class="btn btn-bilgi">İlkelerimizi Keşfet</a>
             </div>
         </div>
     </header>
 
-    <!-- 2. Haberler Bölümü (Resimli) -->
-    <section id="haberler" class="section">
-        <h2 class="section-title">Son Gelişmeler ve Haberler</h2>
-        <div class="news-grid">
-            
-            <!-- 1. Haber -->
-            <div class="news-card">
-                <img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?q=80&w=600&auto=format&fit=crop" alt="Miting">
-                <div class="news-content">
-                    <h3>Halkla Buluşma Mitingi Gerçekleşti</h3>
-                    <p>Anadolu'nun dört bir yanından gelen vatandaşlarımızla kucaklaştık. Ortak geleceğimiz için atacağımız adımları konuştuk.</p>
-                </div>
+    <!-- 2. İlkelerimiz / Değerlerimiz Bölümü -->
+    <section id="ilkeler" class="section">
+        <h2 class="section-title">Temel İlkelerimiz</h2>
+        <p class="section-subtitle">Ülkemizi refaha ve adaletle taşımak için benimsediğimiz temel değerler</p>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <h3>Adalet ve Eşitlik</h3>
+                <p>Kanun önünde herkesin eşit olduğu, kayırmacılığın olmadığı şeffaf bir adalet sistemi.</p>
             </div>
-
-            <!-- 2. Haber -->
-            <div class="news-card">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" alt="Vizyon Raporu">
-                <div class="news-content">
-                    <h3>Yeni Vizyon Raporu Açıklandı</h3>
-                    <p>Ekonomiden eğitime, adaletten sağlığa kadar ülkenin tüm sorunlarına kalıcı çözümler getirecek raporumuz kamuoyuyla paylaşıldı.</p>
-                </div>
+            <div class="principle-card">
+                <h3>Güçlü Ekonomik Kalkınma</h3>
+                <p>Üretimi destekleyen, alım gücünü artıran ve gençlere istihdam sağlayan yenilikçi ekonomi modelleri.</p>
             </div>
-
-            <!-- 3. Haber -->
-            <div class="news-card">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Gençlik Buluşması">
-                <div class="news-content">
-                    <h3>Gençlik Kolları Toplantısı</h3>
-                    <p>Geleceğimizin teminatı olan gençlerimizle bir araya geldik. Yenilikçi projelerini dinledik ve destek mesajımızı yineledik.</p>
-                </div>
+            <div class="principle-card">
+                <h3>Halkçı Siyaset</h3>
+                <p>Kararları kapalı kapılar ardında değil, doğrudan meydanlarda halkımızla birlikte alıyoruz.</p>
             </div>
-
+            <div class="principle-card">
+                <h3>Gençlik ve Liyakat</h3>
+                <p>Geleceğin mimarı gençlerimize fırsat eşitliği tanıyor, liyakati baş üstünde tutuyoruz.</p>
+            </div>
         </div>
     </section>
 
-    <!-- 3. Üye Ol Form Bölümü -->
+    <!-- 3. Haberler Bölümü -->
+    <section id="haberler" class="section">
+        <h2 class="section-title">Güncel Gelişmeler</h2>
+        <p class="section-subtitle">Saha çalışmalarımızdan ve mitinglerimizden son kareler</p>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?q=80&w=600&auto=format&fit=crop" alt="Miting">
+                <div class="news-content">
+                    <h3>Büyük Halk Buluşması Gerçekleşti</h3>
+                    <p>Anadolu'nun dört bir yanından gelen binlerce vatandaşımızla kucaklaştık. Umudu hep birlikte büyütüyoruz.</p>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" alt="Vizyon">
+                <div class="news-content">
+                    <h3>Yeni Dönem Kalkınma Raporu</h3>
+                    <p>Ülkemizin kronikleşmiş ekonomik ve sosyal sorunlarına kalıcı çözümler getirecek kapsamlı raporumuz açıklandı.</p>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Gençlik">
+                <div class="news-content">
+                    <h3>Gençlik Zirvesi ve Proje Sunumları</h3>
+                    <p>Genç beyinlerin teknoloji, bilim ve girişimcilik alanındaki projelerini dinledik, geleceği birlikte tasarlıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Üye Ol Form Bölümü -->
     <section id="uye-ol" class="section">
-        <h2 class="section-title">Aramıza Katılın, Gücümüze Güç Katın</h2>
+        <h2 class="section-title">Aramıza Katılın</h2>
+        <p class="section-subtitle">Değişimin bir parçası olmak ve bu yürüyüşte yer almak için formu doldurun</p>
         <div class="form-container">
             <form>
                 <div class="form-group">
@@ -351,14 +462,34 @@
                     <label for="sehir">Şehir</label>
                     <input type="text" id="sehir" placeholder="Yaşadığınız şehir" required>
                 </div>
-                <button type="submit" class="form-submit">Hemen Üye Ol</button>
+                <div class="form-group">
+                    <label for="ilgi">Katılım Amacınız</label>
+                    <select id="ilgi">
+                        <option>Gönüllü Olarak Desteklemek İstiyorum</option>
+                        <option>Parti Üyesi Olmak İstiyorum</option>
+                        <option>Gençlik Kollarına Katılmak İstiyorum</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-submit">Hemen Kaydol</button>
             </form>
         </div>
     </section>
 
-    <!-- Alt Bilgi -->
+    <!-- Alt Bilgi ve Sosyal Medya -->
     <footer>
-        <p>&copy; 2026 - Tüm Hakları Saklıdır. Türkiye'nin Geleceği İçin Omuz Omuza.</p>
+        <div class="footer-content">
+            <h3>Birlikte Güçlüyüz, Birlikte Kazanacağız</h3>
+            <p>Geleceği inşa etmek için bizi sosyal medyada takip edin, sesimizi her yere duyuralım.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">X (Twitter)</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">YouTube</a>
+                <a href="#" target="_blank">Facebook</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 - Tüm Hakları Saklıdır. Türkiye'nin Geleceği İçin Omuz Omuza.</p>
+            </div>
+        </div>
     </footer>
 
 </body>
